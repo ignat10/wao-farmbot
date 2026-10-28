@@ -15,7 +15,7 @@ log_filename = LOGS_DIR / f"{instance_name}-{timestamp}.log"
 logger = logging.getLogger("MyApp")
 logger.setLevel(logging.INFO)
 
-formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
+formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s", datefmt="%d-%b-%Y %H:%M:%S")
 
 file_handler = logging.FileHandler(log_filename, encoding="utf-8")
 file_handler.setFormatter(formatter)
