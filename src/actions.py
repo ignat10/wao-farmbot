@@ -1262,7 +1262,8 @@ class Castle:
         if not objects['gather'].tap(4):
             return False
 
-        if not objects['set_out'].exists(2):
+        if not objects['set_out'].exists(3):
+            logger.info("No set out.")
             back()
             sleep(1)
             return False
@@ -1272,12 +1273,13 @@ class Castle:
 
         objects["set_out"].force_tap()
 
-        if not objects['book'].exists(1):
+        if objects['book'].exists(1):
+            logger.info("set out.")
+        else:
             self.is_enough_troops = False
             back()
             sleep(1)
-            return False
-
+        self.to_map()
         return True
 
     def get_std_mine(self) -> None:
