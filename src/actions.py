@@ -1295,10 +1295,12 @@ class Castle:
             objects["go"].tap(times=4, interval=0.1)
 
             if objects["gather"].tap(4):
-                self._set_out()
-                print("mine taken.")
-                self.mine_type = chain([(level, need_type)], self.mine_type)
-                return
+                if self._set_out():
+                    self.mine_type = chain([(level, need_type)], self.mine_type)
+                    return
+
+                objects['search'].force_tap(10)
+
         log_raise(f"cannot find standard mine. check screen.png")
 
     def get_elite_mine(self) -> bool:
