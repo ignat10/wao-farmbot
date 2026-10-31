@@ -397,10 +397,6 @@ class Castle:
         while objects["hand"].tap(1):
             if objects["heroic_evoluation_blue"].tap(0.7):
                 objects["evolve"].tap(5)
-            if objects["go_blue"].tap():
-                log_raise("UNKNOWN BEHAVIOUR, NEED TO BE CHECKED")
-                # sleep(1)
-                # return False
             objects["free"].tap() or objects['free_upgrade'].tap()
             if objects["kingroad_go"].tap():
                 logger.info("tapped kingroad go inside hand loop")
@@ -420,6 +416,11 @@ class Castle:
             self.close_ad()
             self.join_alliance()
             return True
+
+        elif objects["go_blue"].exists():
+            self.close_ad()
+            self.upgrade_castle()
+            return False
 
         if objects["unlock"].tap():
             logger.info("beast unlocked")
