@@ -981,8 +981,8 @@ class Castle:
             if self.confirm_rss():
                 return True
 
-            if MineType.check_need() is not None:
-                logger.info("Not enough rss even with pack.")
+            if (mine_type := MineType.check_need()) is not None:
+                logger.info(f"Not enough {mine_type.name.lower()} even with pack.")
                 self.no_speed += 3
                 return False
 
@@ -991,7 +991,12 @@ class Castle:
                 self.no_speed += 3
                 return False
 
-            if (
+            if objects['get_now'].count() == 2:
+                objects['get_now'].force_tap(index=randrange(0, 2))
+                sleep(1)
+                self.speed_up()
+
+            if not (
                 objects["hand"].tap(1)
                 or objects["upgrade_blue"].tap()
                 or objects["big_upgrade_blue"].tap()
@@ -999,7 +1004,7 @@ class Castle:
                 or objects["hammer_200"].tap()
                 or objects["go_upgrade"].tap()
             ):
-                continue
+                break
 
         return self.speed_up()
 
