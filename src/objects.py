@@ -218,6 +218,7 @@ ScreenObjectName = Literal[
     "realm",
     "age",
     "confirm_age",
+    "retry_network",
     "man",
     "blue_bonus",
     "confirm_bonus",

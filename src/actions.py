@@ -582,6 +582,7 @@ class Castle:
                 if objects['confirm_age'].tap(3):
                     logger.info("confirmed age")
             objects['x_ldplayer'].tap()
+            objects['retry_network'].tap()
             if perf_counter() - start > 200:
                 logger.info("loading timeout. restart app.")
                 restart_app()
