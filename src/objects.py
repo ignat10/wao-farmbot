@@ -115,6 +115,7 @@ ScreenObjectName = Literal[
     "apply",
     "applying",
     "help",
+    "no_help_all",
     "alliance_donate",
     "donate_blue",
     "donate_confirm",

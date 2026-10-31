@@ -417,6 +417,10 @@ class Castle:
             self.join_alliance()
             return True
 
+        elif objects['no_help_all'].exists():
+            self.close_ad()
+            return False
+
         elif objects["go_blue"].exists():
             self.close_ad()
             self.upgrade_castle()
