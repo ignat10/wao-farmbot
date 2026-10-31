@@ -113,6 +113,7 @@ ScreenObjectName = Literal[
     "alliance_bonuses",
     "join",
     "apply",
+    "applying",
     "help",
     "alliance_donate",
     "donate_blue",
