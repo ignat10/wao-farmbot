@@ -883,9 +883,12 @@ class Castle:
         level = self.level
         if not self.tasks():
             return
-        objects["research_task"].force_tap(10)
+        if not objects["research_task"].tap(5):
+            self.close_ad()
+            self.research()
+            return
         if not objects["military"].exists(2):
-            objects["back"].force_tap()
+            objects["back"].force_tap(10)
             objects["military"].force_exists(10)
         if (
             marches == 1 and level >= 5
