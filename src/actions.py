@@ -505,6 +505,8 @@ class Castle:
         ):
             self.kill_monsters()
 
+        logger.info("kingroad task finished")
+
         self.speed_up()
         self.close_ad()
         return True
