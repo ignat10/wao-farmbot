@@ -1210,15 +1210,15 @@ class Castle:
     def to_map(cls) -> None:
         """Goes to map from inside city"""
         while not objects['book'].exists(1):
-            if objects['loading'].exists(1) and objects['book'].exists(10):
-                break
-            if not objects['map'].tap():
+            objects['map'].tap()
+            if objects['loading'].exists(1):
+                objects['book'].exists(10)
+            else:
                 cls.close_ad()
 
     def free_marches(self) -> int:
         """get number of available marches of current castle"""
-        if not objects['book'].exists():
-            log_raise("tried to check free marches while not at map")
+        self.to_map()
         limit = self.marches
         if objects["more_marches"].tap():
             sleep(1)
@@ -1320,6 +1320,7 @@ class Castle:
     def get_elite_mine(self) -> bool:
         """Gets elite mine from the map."""
         logger.info("Elite")
+        self.to_map()
         objects["book"].force_tap()
 
         if objects["x_news"].tap(0.5):
