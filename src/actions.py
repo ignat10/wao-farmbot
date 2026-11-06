@@ -1253,12 +1253,12 @@ class Castle:
         if not self.withdraw() and objects["arrow"].exists(2):
             objects["arrow"].force_tap(times=2, interval=0.2)
         for _ in range(30):
-            if objects["quick_search"].tap():
+            if objects["quick_search"].tap(1):
                 objects["map_hand"].force_tap(3)
                 objects["arrow"].exists(2)
                 objects["arrow"].tap(times=2, interval=0.5)
 
-            elif objects['attack'].tap():
+            elif objects['attack'].tap(1):
                 objects["set_out"].tap(2)
                 if objects["use_stamina"].tap(1):
                     objects["confirm_use_stamina"].force_tap(3)
@@ -1268,7 +1268,9 @@ class Castle:
                 if not objects['book'].exists(1):
                     self.stamina = False
                 break
-            tap_center()
+
+            else:
+                tap_center()
         self.close_ad()
 
     def _set_out(self) -> bool:
