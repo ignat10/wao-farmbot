@@ -1265,28 +1265,29 @@ class Castle:
         self.close_ad()
 
     def _set_out(self) -> bool:
-        if not objects['gather'].tap(4):
-            return False
+        try:
+            if not objects['gather'].tap(4):
+                return False
 
-        if not objects['set_out'].exists(3):
-            logger.info("No set out.")
-            back()
-            sleep(1)
-            return False
+            if not objects['set_out'].exists(3):
+                logger.info("No set out.")
+                return False
 
-        if objects['troops_slider'].count() == 6:
-            self.is_enough_troops = False
+            if objects['troops_slider'].count() == 6:
+                self.is_enough_troops = False
 
-        objects["set_out"].force_tap()
+            objects["set_out"].force_tap()
 
-        if objects['book'].exists(1):
-            logger.info("set out.")
-        else:
-            self.is_enough_troops = False
-            back()
-            sleep(1)
-        self.to_map()
-        return True
+            if objects['book'].exists(1):
+                logger.info("set out.")
+            else:
+                self.is_enough_troops = False
+            return True
+        finally:
+            if not objects['book'].exists():
+                back()
+                sleep(1)
+                self.to_map()
 
     def get_std_mine(self) -> None:
         """Gets standard mine from the map."""
