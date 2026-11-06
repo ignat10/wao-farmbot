@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from enum import Enum, auto
+from enum import Enum
 
 from src.objects import objects, resources_need, avatars
 
@@ -14,32 +14,12 @@ class MineType(Enum):
     @classmethod
     def check_need(cls) -> MineType | None:
         for mine in MineType:
-            if mine == MineType.IRON: # WARNING: remove when need_iron template captured
+            if mine == MineType.IRON: # HACK: remove when need_iron template captured
                 continue
             if resources_need[mine.name.lower()].exists():
                 return mine
         return None
 
-class CastleStatus(Enum):
-    CLOSED_AD = auto()
-    AD = auto()
-    NOT_IN_CASTLE = auto()
-
-
-def check_castle_status() -> CastleStatus:
-    if objects["map"].exists():
-        return CastleStatus.CLOSED_AD
-
-    if (
-        objects["blur"].exists()
-        or objects["claim_daily"].exists()
-        or objects["x"].exists()
-        or objects['bella'].exists()
-        or objects['x_swap'].exists()
-    ):
-        return CastleStatus.AD
-
-    return CastleStatus.NOT_IN_CASTLE
 
 class Task(Enum):
     UPGRADE = objects["start_upgrading"]

@@ -30,12 +30,7 @@ from src.objects import (
     march_limits,
 )
 from src.paths import CASTLES_DB_PATH
-from src.status import (
-    CastleStatus,
-    MineType,
-    Task,
-    check_castle_status,
-)
+from src.status import MineType, Task
 from src.logger import logger
 from src.utils import log_raise
 
@@ -573,7 +568,13 @@ class Castle:
         start = perf_counter()
         reset_screen()
         logger.info("loading game")
-        while check_castle_status() == CastleStatus.NOT_IN_CASTLE:
+        while not (
+            objects["blur"].exists()
+            or objects["claim_daily"].exists()
+            or objects["x"].exists()
+            or objects['bella'].exists()
+            or objects['x_swap'].exists()
+        ):
             reset_screen()
             if objects["man"].exists():
                 return
@@ -594,9 +595,9 @@ class Castle:
 
     @classmethod
     def close_ad(cls) -> None:
-        """closes ad. from city or map"""
+        """closes ad."""
         for _ in range(4):
-            if check_castle_status() == CastleStatus.CLOSED_AD:
+            if objects['map'].exists(1):
                 return
             if cls.close_bella():
                 logger.info("closed bella. looking for hand.")
@@ -618,15 +619,15 @@ class Castle:
                 objects["claim_daily"].tap()
                 objects["claim_temple"].tap()
                 objects["check_beast"].tap()
-            if check_castle_status() == CastleStatus.CLOSED_AD:
+            if objects['map'].exists(1):
                 return
             for _ in range(3):
                 back()
                 sleep(0.2)
             sleep(1)
-            if check_castle_status() == CastleStatus.CLOSED_AD:
+            if objects['map'].exists(2):
                 return
-            elif objects["no"].tap(3):
+            elif objects["no"].tap():
                 sleep(1.5)
             else:
                 tap_center()
