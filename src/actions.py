@@ -540,12 +540,15 @@ class Castle:
             logger.info(f"logging into {self.name}")
             reset_screen()
             self.close_ad()
-            if objects["avatar"].tap():
-                objects["account"].exists(4)
-            if objects["account"].tap():
-                objects["switch"].force_exists(15)
-            if objects["switch"].tap():
-                sleep(1.5)
+            if not objects["avatar"].tap(10):
+                self.to_map()
+                continue
+            if not objects["account"].tap(10):
+                logger.warning("Not found account button in avatar.")
+                continue
+            if not objects["switch"].tap(10):
+                logger.warning("Not found switch button in account.")
+                continue
             if not (objects["login"].tap(3) and objects["gmail"].exists(10)):
                 continue
             objects["gmail"].force_tap(index=self.google)
