@@ -1353,6 +1353,8 @@ class Castle:
     def grow(self):
         self.bind_account()
         self.claim_rss()
+        _ = self.level
+        _ = self.marches
         if self.last_login_minutes // 60 > 12:
             self.claim_mail()
             self.upgrade_lord_skills()
@@ -1380,7 +1382,6 @@ class Castle:
         if self.level < 15:
             self.upgrade_castle()
 
-        _ = self.marches
         self.to_map()
         if self.free_marches() != 0:
             self.get_elite_mine()
