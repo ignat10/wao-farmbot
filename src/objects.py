@@ -219,7 +219,7 @@ ScreenObjectName = Literal[
     "age",
     "confirm_age",
     "retry_network",
-    "man",
+    "pause",
     "blue_bonus",
     "confirm_bonus",
     "quit",

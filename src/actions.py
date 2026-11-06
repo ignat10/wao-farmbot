@@ -173,7 +173,7 @@ class Castle:
             objects["realm"].force_tap()
             logger.info("account created")
 
-        objects["man"].force_exists(100)
+        objects["pause"].force_exists(100)
         swipe_center(Direction.Up, SwipeSpeed.Slow, 1.7)
         swipe_center(Direction.Right, SwipeSpeed.Slow, 0.75)
         sleep(15)
@@ -219,7 +219,7 @@ class Castle:
     @classmethod
     def challenge(cls) -> None:
         logger.info("challenging")
-        while not (objects["man"].exists() or objects['blue_bonus'].exists()):
+        while not (objects["pause"].exists() or objects['blue_bonus'].exists()):
             for obj in bug_levels:
                 obj.tap()
             objects["challenge"].tap() or objects["bright_challenge"].tap()
@@ -499,7 +499,7 @@ class Castle:
         elif objects["bright_challenge"].exists():
             self.challenge()
         if (
-            objects["man"].exists()
+            objects["pause"].exists()
             or objects["blue_bonus"].tap()
             or objects["confirm_bonus"].tap()
         ):
@@ -581,7 +581,8 @@ class Castle:
             or objects['x_swap'].exists()
         ):
             reset_screen()
-            if objects["man"].exists():
+            if objects["pause"].exists():
+                self.new_account()
                 return
             if objects['age'].tap():
                 sleep(1)
