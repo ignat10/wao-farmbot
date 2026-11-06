@@ -1018,9 +1018,17 @@ class Castle:
             self.to_map()
             self.close_ad()
             self.upgrade_castle()
-        if objects["upgrade"].tap(2):
+        if objects["upgrade"].tap(4):
             sleep(2)
-        self._build_need()
+            self._build_need()
+        elif objects['speed_up'].tap():
+            sleep(2)
+            self.speed_up()
+        else:
+            logger.warning("Not found upgrade or speed_up objects.")
+            self.upgrade_castle()
+            return
+
         self.close_ad()
 
     def build(self) -> bool:
