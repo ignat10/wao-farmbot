@@ -755,6 +755,7 @@ class Castle:
 
     def tasks(self) -> bool:
         if not objects['tasks'].tap(3):
+            back()
             self.close_ad()
             if self.level < 5:
                 return objects['tasks'].tap()
@@ -1049,7 +1050,8 @@ class Castle:
         back()
         sleep(2)
         for i in range(barracks):
-            objects['tasks'].force_tap(10)
+            if not self.tasks():
+                log_raise("cannot find tasks object")
             if not objects['recruit_task'].exists(3):
                 self.claim_recruits()
             objects['recruit_task'].force_tap(index=i)
