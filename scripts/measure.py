@@ -38,5 +38,5 @@ exists_all()
 load = fixed_load - fixed_elapsed + unfixed_load - unfixed_elapsed
 
 print(
-    f"fixed took {fixed_elapsed}. not fixed: {unfixed_elapsed}, load: {load}, screencap: {screencap}"
+    f"fixed took {fixed_elapsed:2f}. not fixed: {unfixed_elapsed:2f}, load: {load:2f}, screencap: {screencap:2f}"
 )
