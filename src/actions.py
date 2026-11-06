@@ -952,25 +952,22 @@ class Castle:
     def forge(cls) -> None:
         logger.info("forging")
         if objects["forge"].tap():
-            sleep(0.8)
+            sleep(1)
         max_item: ScreenObject | None = None
-        max_num = 0
+        max_num: int = 0
         for item in equipment:
             item.force_tap()
             sleep(0.8)
             n = objects["forge_green"].count()
-            if n >= max_num:
-                max_num = n
-                max_item = item
+            (max_item, max_num) = max((max_item, max_num), (item, n), key=lambda x: x[1])
             back()
             sleep(0.8)
         if max_item is not None:
-            max_item.tap()
-            objects["forge_green"].exists(10)
-            objects["forge_green"].tap(index=max_num - 1)
-            if objects["+"].tap(1):
-                objects["select"].tap(3)
-            objects["forge_blue"].tap(5)
+            max_item.force_tap(10)
+            objects["forge_green"].force_tap(10, index=max_num - 1)
+            if objects["+"].tap(2):
+                objects["select"].force_tap(10)
+            objects["forge_blue"].force_tap(10)
         cls.close_ad()
 
     def _build_need(self) -> bool:
