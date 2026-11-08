@@ -4,6 +4,7 @@ from time import perf_counter
 from src.device import launch_instance
 from src.utils import parse_instance
 from src.objects import objects
+from src.paths import SAMPLES_DIR
 
 launch_instance(parse_instance())
 
@@ -11,7 +12,7 @@ screencap_timer = perf_counter()
 objects.values().__iter__().__next__().exists()  # screencap
 screencap = perf_counter() - screencap_timer
 
-with open("data/objects.json") as f:
+with open(SAMPLES_DIR.parent / "objects.json") as f:
     data = load(f)
 assert isinstance(data, dict)
 
@@ -25,7 +26,7 @@ def exists_all():
         obj.exists()
         end = perf_counter()
         delta = end - start
-        if data[name][0] is None:  # if coords are not fixed:
+        if data[name][0] is None:  # if point is not fixed:
             unfixed_elapsed += delta
         else:
             fixed_elapsed += delta

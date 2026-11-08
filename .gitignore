@@ -1,15 +1,8 @@
-venv/
+.venv/
 __pycache__/
 
 .idea/
 .vscode/
-
-# images
-*.png
-*.svg
-
-!data/samples/**
-!data/regions/**
 
 .env
 
