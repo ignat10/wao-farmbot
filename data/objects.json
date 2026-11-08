@@ -1,145 +1,5 @@
 {
-  "kingroad_claim": [
-    null,
-    5
-  ],
-  "login": [
-    null,
-    5
-  ],
-  "free_upgrade": [
-    null,
-    5
-  ],
-  "confirm_bonus": [
-    null,
-    5
-  ],
-  "go_upgrade": [
-    null,
-    5
-  ],
-  "development_skills": [
-    null,
-    5
-  ],
-  "check": [
-    null,
-    5
-  ],
-  "card": [
-    null,
-    5
-  ],
-  "use": [
-    null,
-    5
-  ],
-  "get_now_research": [
-    null,
-    5
-  ],
-  "skill_points_0": [
-    null,
-    5
-  ],
-  "ruins_wave_3": [
-    null,
-    5
-  ],
-  "monster_plus": [
-    null,
-    5
-  ],
-  "march_limit_1": [
-    null,
-    5
-  ],
-  "depot": [
-    null,
-    5
-  ],
-  "kingroad": [
-    null,
-    5
-  ],
-  "march_limit_2": [
-    null,
-    5
-  ],
-  "free": [
-    null,
-    5
-  ],
-  "acc_list": [
-    null,
-    5
-  ],
-  "plow": [
-    null,
-    5
-  ],
-  "claim_holy_quest": [
-    null,
-    5
-  ],
-  "no_help_all": [
-    null,
-    5
-  ],
-  "harvest": [
-    null,
-    5
-  ],
-  "castle_level_11": [
-    null,
-    5
-  ],
-  "fold": [
-    null,
-    5
-  ],
-  "helmet": [
-    null,
-    5
-  ],
-  "blur": [
-    null,
-    5
-  ],
-  "legion": [
-    null,
-    5
-  ],
-  "castle_level_13": [
-    null,
-    5
-  ],
-  "join": [
-    null,
-    5
-  ],
-  "leadership": [
-    null,
-    5
-  ],
-  "another_growth_quest": [
-    null,
-    5
-  ],
-  "continue_game": [
-    null,
-    5
-  ],
-  "check_details": [
-    null,
-    5
-  ],
-  "delete_mail": [
-    null,
-    5
-  ],
-  "event": [
+  "hammer_200": [
     null,
     5
   ],
@@ -147,791 +7,18 @@
     null,
     5
   ],
-  "recruit_blue": [
-    null,
-    5
-  ],
-  "check_beast": [
-    null,
-    5
-  ],
-  "castle_building": [
-    null,
-    5
-  ],
-  "confirm_rss": [
-    null,
-    5
-  ],
-  "research_blue": [
-    null,
-    5
-  ],
-  "claim": [
-    null,
-    5
-  ],
-  "hammer_use": [
-    null,
-    5
-  ],
-  "speed_up": [
-    null,
-    5
-  ],
-  "camel": [
-    null,
-    5
-  ],
-  "x": [
-    null,
-    5
-  ],
-  "tasks": [
-    null,
-    5
-  ],
-  "lord": [
-    null,
-    5
-  ],
-  "heroic_evolution": [
-    null,
-    5
-  ],
-  "recall_all": [
-    null,
-    5
-  ],
-  "read_claim_all": [
-    null,
-    5
-  ],
-  "gather_task": [
-    null,
-    5
-  ],
-  "undo_bind": [
-    null,
-    5
-  ],
-  "scout": [
-    null,
-    5
-  ],
-  "kingroad_go": [
-    null,
-    5
-  ],
-  "sickle": [
-    null,
-    5
-  ],
-  "elite_mines": [
-    null,
-    5
-  ],
-  "first_castle": [
-    null,
-    5
-  ],
-  "confirm_use_stamina": [
-    null,
-    5
-  ],
-  "holy_revival": [
-    null,
-    5
-  ],
-  "evolve": [
-    null,
-    5
-  ],
-  "second": [
-    null,
-    5
-  ],
-  "conquer": [
-    null,
-    5
-  ],
-  "switch": [
-    null,
-    5
-  ],
-  "2-16_characters": [
-    null,
-    5
-  ],
-  "search": [
-    null,
-    5
-  ],
-  "pinata": [
-    null,
-    5
-  ],
-  "castle_level_3": [
-    null,
-    5
-  ],
-  "avatar_14": [
-    null,
-    5
-  ],
-  "food_type": [
-    null,
-    5
-  ],
-  "alliance_bonuses": [
-    null,
-    5
-  ],
-  "avatar_13": [
-    null,
-    5
-  ],
-  "big_upgrade_blue": [
-    null,
-    5
-  ],
-  "bright_challenge": [
-    null,
-    5
-  ],
-  "back": [
-    null,
-    5
-  ],
-  "infantry": [
-    null,
-    5
-  ],
-  "try_luck": [
-    null,
-    5
-  ],
-  "max_items": [
-    null,
-    5
-  ],
-  "confirm_shell": [
-    null,
-    5
-  ],
-  "alliance": [
-    null,
-    5
-  ],
-  "claim_healed": [
-    null,
-    5
-  ],
-  "hospital": [
-    null,
-    5
-  ],
-  "green_castle": [
-    null,
-    5
-  ],
-  "upgrade_to_max": [
-    null,
-    5
-  ],
-  "castle_level_6": [
-    null,
-    5
-  ],
-  "x_swap": [
-    null,
-    5
-  ],
-  "autumn_login": [
-    null,
-    5
-  ],
-  "7-day_march": [
-    null,
-    5
-  ],
-  "donate_confirm": [
-    null,
-    5
-  ],
-  "attack": [
-    null,
-    5
-  ],
-  "need_wood": [
-    null,
-    5
-  ],
-  "alliance_quest": [
-    null,
-    5
-  ],
-  "castle_level_9": [
-    null,
-    5
-  ],
-  "battle_power": [
-    null,
-    5
-  ],
-  "horseshoes": [
-    null,
-    5
-  ],
-  "use_speed": [
-    null,
-    5
-  ],
-  "continue": [
-    null,
-    5
-  ],
-  "forge_green": [
-    null,
-    5
+  "VIChac": [
+    [
+      27,
+      31
+    ],
+    1
   ],
   "build_task": [
-    null,
-    5
+    "construction",
+    10
   ],
-  "castle_level_4": [
-    null,
-    5
-  ],
-  "hand": [
-    null,
-    5
-  ],
-  "forge_blue": [
-    null,
-    5
-  ],
-  "switch_arrows": [
-    null,
-    5
-  ],
-  "holy_quest": [
-    null,
-    5
-  ],
-  "hospital_building": [
-    null,
-    5
-  ],
-  "unlock": [
-    null,
-    5
-  ],
-  "blue": [
-    null,
-    5
-  ],
-  "boots": [
-    null,
-    5
-  ],
-  "lord_info": [
-    null,
-    5
-  ],
-  "lord_skill": [
-    null,
-    5
-  ],
-  "challenge": [
-    null,
-    5
-  ],
-  "reward": [
-    null,
-    5
-  ],
-  "claim_growth_quest": [
-    null,
-    5
-  ],
-  "avatar_11": [
-    null,
-    5
-  ],
-  "speed_up_blue": [
-    null,
-    5
-  ],
-  "bug_level_1": [
-    null,
-    5
-  ],
-  "draft": [
-    null,
-    5
-  ],
-  "quest_complete": [
-    null,
-    5
-  ],
-  "applying": [
-    null,
-    5
-  ],
-  "monster": [
-    null,
-    5
-  ],
-  "x_ldplayer": [
-    null,
-    5
-  ],
-  "troops_slider": [
-    null,
-    5
-  ],
-  "use_blue": [
-    null,
-    5
-  ],
-  "x_new": [
-    null,
-    5
-  ],
-  "use_stamina": [
-    null,
-    5
-  ],
-  "forge": [
-    null,
-    5
-  ],
-  "need_food": [
-    null,
-    5
-  ],
-  "donate_blue": [
-    null,
-    5
-  ],
-  "pack": [
-    null,
-    5
-  ],
-  "blue_bonus": [
-    null,
-    5
-  ],
-  "!": [
-    null,
-    5
-  ],
-  "start_upgrading": [
-    null,
-    5
-  ],
-  "x_news": [
-    null,
-    5
-  ],
-  "loading": [
-    null,
-    5
-  ],
-  "mail_reward": [
-    null,
-    5
-  ],
-  "ok": [
-    null,
-    5
-  ],
-  "confirm_age": [
-    null,
-    5
-  ],
-  "college_icon": [
-    null,
-    5
-  ],
-  "axe": [
-    null,
-    5
-  ],
-  "clothes": [
-    null,
-    5
-  ],
-  "account": [
-    null,
-    5
-  ],
-  "pinata_task": [
-    null,
-    5
-  ],
-  "map_hand": [
-    null,
-    5
-  ],
-  "claim_torch": [
-    null,
-    5
-  ],
-  "minus": [
-    null,
-    5
-  ],
-  "fiend_trial": [
-    null,
-    5
-  ],
-  "backhand": [
-    null,
-    5
-  ],
-  "use_all": [
-    null,
-    5
-  ],
-  "upgrade_barracks": [
-    null,
-    5
-  ],
-  "new_monster": [
-    null,
-    5
-  ],
-  "upgrade_blue": [
-    null,
-    5
-  ],
-  "quit": [
-    null,
-    5
-  ],
-  "new_game": [
-    null,
-    5
-  ],
-  "castle_level_10": [
-    null,
-    5
-  ],
-  "conjure": [
-    null,
-    5
-  ],
-  "no_suppress": [
-    null,
-    5
-  ],
-  "alliance_donate": [
-    null,
-    5
-  ],
-  "rebels": [
-    null,
-    5
-  ],
-  "daily_quest_claim": [
-    null,
-    5
-  ],
-  "bind": [
-    null,
-    5
-  ],
-  "recruit_task": [
-    null,
-    5
-  ],
-  "sanctuary": [
-    null,
-    5
-  ],
-  "gather": [
-    null,
-    5
-  ],
-  "fortify": [
-    null,
-    5
-  ],
-  "no_speed": [
-    null,
-    5
-  ],
-  "accessory": [
-    null,
-    5
-  ],
-  "castle": [
-    null,
-    5
-  ],
-  "purchase": [
-    null,
-    5
-  ],
-  "book": [
-    null,
-    5
-  ],
-  "+": [
-    null,
-    5
-  ],
-  "mages": [
-    null,
-    5
-  ],
-  "research": [
-    null,
-    5
-  ],
-  "arrow": [
-    null,
-    5
-  ],
-  "avatar_6": [
-    null,
-    5
-  ],
-  "apply": [
-    null,
-    5
-  ],
-  "march_limit_3": [
-    null,
-    5
-  ],
-  "resources": [
-    null,
-    5
-  ],
-  "buy": [
-    null,
-    5
-  ],
-  "confirm_green": [
-    null,
-    5
-  ],
-  "castle_level_8": [
-    null,
-    5
-  ],
-  "wood_type": [
-    null,
-    5
-  ],
-  "confirm": [
-    null,
-    5
-  ],
-  "castle_level_7": [
-    null,
-    5
-  ],
-  "heroic_evoluation_blue": [
-    null,
-    5
-  ],
-  "need_stone": [
-    null,
-    5
-  ],
-  "retry_network": [
-    null,
-    5
-  ],
-  "lord_skills": [
-    null,
-    5
-  ],
-  "avatar": [
-    null,
-    5
-  ],
-  "exit_game": [
-    null,
-    5
-  ],
-  "help": [
-    null,
-    5
-  ],
-  "hammer_200": [
-    null,
-    5
-  ],
-  "upgrade": [
-    null,
-    5
-  ],
-  "change_name_green": [
-    null,
-    5
-  ],
-  "revive": [
-    null,
-    5
-  ],
-  "expansion": [
-    null,
-    5
-  ],
-  "google_down": [
-    null,
-    5
-  ],
-  "claim_daily_quest": [
-    null,
-    5
-  ],
-  "event_claim": [
-    null,
-    5
-  ],
-  "speed_up_march": [
-    null,
-    5
-  ],
-  "green": [
-    null,
-    5
-  ],
-  "gather_speed_up": [
-    null,
-    5
-  ],
-  "claim_holy_water": [
-    null,
-    5
-  ],
-  "heal": [
-    null,
-    5
-  ],
-  "load_boost": [
-    null,
-    5
-  ],
-  "claim_temple": [
-    null,
-    5
-  ],
-  "research_task": [
-    null,
-    5
-  ],
-  "recruit_": [
-    null,
-    5
-  ],
-  "one-tap_upgrade": [
-    null,
-    5
-  ],
-  "get_now": [
-    null,
-    5
-  ],
-  "skip": [
-    null,
-    5
-  ],
-  "events": [
-    null,
-    5
-  ],
-  "select": [
-    null,
-    5
-  ],
-  "iron_type": [
-    null,
-    5
-  ],
-  "confirm_speed_up": [
-    null,
-    5
-  ],
-  "kingroad_done": [
-    null,
-    5
-  ],
-  "go_blue": [
-    null,
-    5
-  ],
-  "suppress": [
-    null,
-    5
-  ],
-  "growth_quest": [
-    null,
-    5
-  ],
-  "bella": [
-    null,
-    5
-  ],
-  "sell": [
-    null,
-    5
-  ],
-  "belt": [
-    null,
-    5
-  ],
-  "altar": [
-    null,
-    5
-  ],
-  "castle_level_15": [
-    null,
-    5
-  ],
-  "castle_level_5": [
-    null,
-    5
-  ],
-  "dragons_domain": [
-    null,
-    5
-  ],
-  "bug_level_2": [
-    null,
-    5
-  ],
-  "map": [
-    null,
-    5
-  ],
-  "stone_type": [
-    null,
-    5
-  ],
-  "gmail": [
-    null,
-    5
-  ],
-  "battle": [
-    null,
-    5
-  ],
-  "use_item": [
-    null,
-    5
-  ],
-  "realm": [
-    null,
-    5
-  ],
-  "use_all_items": [
+  "7-day_march": [
     null,
     5
   ],
@@ -942,67 +29,1608 @@
     ],
     5
   ],
-  "claim_all": [
-    null,
+  "green_castle": [
+    [
+      106,
+      429
+    ],
+    4
+  ],
+  "forge_blue": [
+    [
+      276,
+      1214
+    ],
     5
   ],
-  "castle_level_12": [
-    null,
+  "kingroad_go": [
+    [
+      526,
+      519
+    ],
+    40
+  ],
+  "new_game": [
+    [
+      136,
+      928
+    ],
     5
   ],
-  "archers": [
-    null,
+  "recruit_blue": [
+    [
+      481,
+      1186
+    ],
     5
   ],
-  "previous": [
-    null,
-    5
+  "castle_level_5": [
+    [
+      357,
+      358
+    ],
+    1
   ],
-  "switch_avatar": [
-    null,
-    5
-  ],
-  "castle_level_19": [
-    null,
-    5
+  "castle_level_13": [
+    [
+      364,
+      360
+    ],
+    1
   ],
   "claim_daily": [
     null,
     5
   ],
-  "castle_level_2": [
+  "alliance": [
+    [
+      534,
+      1237
+    ],
+    5
+  ],
+  "need_food": [
     null,
+    5
+  ],
+  "pick_avatar": [
+    null,
+    14
+  ],
+  "castle_level_11": [
+    [
+      360,
+      352
+    ],
+    1
+  ],
+  "x": [
+    null,
+    18
+  ],
+  "loading": [
+    [
+      0,
+      0
+    ],
+    8
+  ],
+  "neogeo2": [
+    null,
+    5
+  ],
+  "upgrade_blue": [
+    [
+      487,
+      1200
+    ],
+    9
+  ],
+  "recruit": [
+    null,
+    20
+  ],
+  "go_upgrade": [
+    null,
+    5
+  ],
+  "free_crystal": [
+    [
+      268,
+      803
+    ],
+    5
+  ],
+  "quest": [
+    [
+      191,
+      1213
+    ],
+    5
+  ],
+  "sickle": [
+    null,
+    5
+  ],
+  "donate_confirm": [
+    [
+      272,
+      670
+    ],
+    5
+  ],
+  "big_upgrade_blue": [
+    [
+      439,
+      1186
+    ],
+    5
+  ],
+  "go_blue": [
+    [
+      305,
+      1009
+    ],
+    5
+  ],
+  "check_beast": [
+    [
+      394,
+      1035
+    ],
+    48
+  ],
+  "switch_arrows": [
+    [
+      147,
+      242
+    ],
+    5
+  ],
+  "resources": [
+    [
+      312,
+      265
+    ],
+    5
+  ],
+  "google_down": [
+    [
+      315,
+      1123
+    ],
+    5
+  ],
+  "claim": [
+    [
+      482,
+      314
+    ],
+    58
+  ],
+  "evolve": [
+    null,
+    5
+  ],
+  "autumn_login": [
+    null,
+    5
+  ],
+  "castle_level_9": [
+    [
+      365,
+      361
+    ],
+    1
+  ],
+  "use_all_items": [
+    [
+      597,
+      867
+    ],
     5
   ],
   "cavalry": [
+    [
+      182,
+      103
+    ],
+    1
+  ],
+  "march_limit_2": [
+    [
+      420,
+      218
+    ],
+    8
+  ],
+  "gather": [
+    null,
+    20
+  ],
+  "confirm": [
+    [
+      129,
+      691
+    ],
+    3
+  ],
+  "castle_level_6": [
+    [
+      364,
+      360
+    ],
+    1
+  ],
+  "fiend_trial": [
+    [
+      83,
+      1040
+    ],
+    5
+  ],
+  "castle_level_12": [
+    [
+      364,
+      362
+    ],
+    5
+  ],
+  "applying": [
+    [
+      534,
+      257
+    ],
+    5
+  ],
+  "no_suppress": [
+    [
+      272,
+      1189
+    ],
+    5
+  ],
+  "claim_temple": [
     null,
     5
   ],
-  "rising_road": [
+  "forge_green": [
     null,
+    5
+  ],
+  "book": [
+    [
+      27,
+      872
+    ],
+    2
+  ],
+  "login": [
+    [
+      198,
+      671
+    ],
+    1
+  ],
+  "another_growth_quest": [
+    null,
+    19
+  ],
+  "bella": [
+    [
+      213,
+      1053
+    ],
+    5
+  ],
+  "!": [
+    null,
+    25
+  ],
+  "minus": [
+    [
+      39,
+      1204
+    ],
+    5
+  ],
+  "apply": [
+    null,
+    5
+  ],
+  "recruit_task": [
+    "recruitment",
+    6
+  ],
+  "try_luck": [
+    [
+      265,
+      1067
+    ],
+    5
+  ],
+  "depot": [
+    null,
+    5
+  ],
+  "skip": [
+    [
+      638,
+      250
+    ],
+    5
+  ],
+  "x_swap": [
+    [
+      642,
+      1149
+    ],
+    5
+  ],
+  "suppress": [
+    [
+      299,
+      1203
+    ],
+    5
+  ],
+  "mail": [
+    [
+      424,
+      1213
+    ],
+    5
+  ],
+  "use_item": [
+    [
+      289,
+      781
+    ],
+    5
+  ],
+  "alliance_bonuses": [
+    [
+      93,
+      680
+    ],
+    5
+  ],
+  "haac": [
+    null,
+    5
+  ],
+  "switch_avatar": [
+    [
+      267,
+      1191
+    ],
+    5
+  ],
+  "undo_bind": [
+    [
+      130,
+      481
+    ],
+    5
+  ],
+  "legion": [
+    null,
+    10
+  ],
+  "revive": [
+    null,
+    5
+  ],
+  "2-16_characters": [
+    [
+      298,
+      626
+    ],
+    5
+  ],
+  "unlock": [
+    null,
+    5
+  ],
+  "boots": [
+    [
+      498,
+      961
+    ],
+    5
+  ],
+  "event": [
+    [
+      256,
+      21
+    ],
+    5
+  ],
+  "leo": [
+    null,
+    5
+  ],
+  "arrow": [
+    null,
+    5
+  ],
+  "claim_torch": [
+    [
+      264,
+      1191
+    ],
+    5
+  ],
+  "zuchin": [
+    null,
+    5
+  ],
+  "check_details": [
+    [
+      6,
+      1205
+    ],
+    1
+  ],
+  "confirm_bonus": [
+    [
+      284,
+      975
+    ],
+    5
+  ],
+  "claim_growth_quest": [
+    null,
+    12
+  ],
+  "reward": [
+    [
+      264,
+      351
+    ],
+    5
+  ],
+  "green": [
+    null,
+    5
+  ],
+  "stone_type": [
+    [
+      246,
+      1025
+    ],
+    1
+  ],
+  "gather_task": [
+    [
+      138,
+      511
+    ],
+    5
+  ],
+  "claim_daily_quest": [
+    null,
+    20
+  ],
+  "mail_reward": [
+    null,
+    5
+  ],
+  "wood_type": [
+    [
+      152,
+      1064
+    ],
+    1
+  ],
+  "backhand": [
+    [
+      34,
+      15
+    ],
+    7
+  ],
+  "use_all": [
+    [
+      270,
+      933
+    ],
+    5
+  ],
+  "pinata_task": [
+    [
+      405,
+      857
+    ],
+    5
+  ],
+  "switch_level": [
+    [
+      672,
+      784
+    ],
+    5
+  ],
+  "avatar_6": [
+    [
+      31,
+      34
+    ],
+    5
+  ],
+  "bright_challenge": [
+    null,
+    7
+  ],
+  "monster": [
+    null,
+    5
+  ],
+  "second": [
+    [
+      655,
+      882
+    ],
+    35
+  ],
+  "confirm_green": [
+    [
+      444,
+      691
+    ],
+    5
+  ],
+  "x_new": [
+    null,
+    5
+  ],
+  "upgrade_barracks": [
+    [
+      258,
+      1181
+    ],
+    5
+  ],
+  "challenge": [
+    null,
+    5
+  ],
+  "growth_quest": [
+    [
+      189,
+      125
+    ],
+    5
+  ],
+  "march_limit_1": [
+    [
+      420,
+      217
+    ],
+    5
+  ],
+  "weapon": [
+    [
+      146,
+      361
+    ],
+    5
+  ],
+  "sell": [
+    [
+      318,
+      514
+    ],
+    5
+  ],
+  "back": [
+    [
+      19,
+      12
+    ],
+    5
+  ],
+  "change_name": [
+    [
+      497,
+      135
+    ],
+    5
+  ],
+  "alliance_donate": [
+    [
+      584,
+      335
+    ],
+    5
+  ],
+  "sanctuary": [
+    null,
+    15
+  ],
+  "research_task": [
+    [
+      401,
+      894
+    ],
+    9
+  ],
+  "monster_plus": [
+    [
+      467,
+      1205
+    ],
+    5
+  ],
+  "events": [
+    [
+      31,
+      824
+    ],
+    40
+  ],
+  "bind": [
+    [
+      124,
+      483
+    ],
+    5
+  ],
+  "forge": [
+    null,
+    5
+  ],
+  "map_hand": [
+    null,
+    15
+  ],
+  "castle_level_7": [
+    [
+      361,
+      360
+    ],
+    1
+  ],
+  "axe": [
+    null,
+    5
+  ],
+  "ruins_wave_3": [
+    [
+      135,
+      507
+    ],
+    5
+  ],
+  "no_speed": [
+    [
+      466,
+      1182
+    ],
+    5
+  ],
+  "heroic_evoluation_blue": [
+    null,
+    5
+  ],
+  "continue": [
+    [
+      438,
+      1149
+    ],
+    5
+  ],
+  "avatar": [
+    [
+      52,
+      10
+    ],
+    10
+  ],
+  "draft": [
+    null,
+    13
+  ],
+  "need_wood": [
+    null,
+    5
+  ],
+  "upgrade": [
+    null,
+    15
+  ],
+  "castle": [
+    "accounts",
+    14
+  ],
+  "castle_level_15": [
+    [
+      363,
+      358
+    ],
+    1
+  ],
+  "new": [
+    null,
+    5
+  ],
+  "fold": [
+    [
+      542,
+      1216
+    ],
+    5
+  ],
+  "first_castle": [
+    null,
+    5
+  ],
+  "blue": [
+    null,
+    1
+  ],
+  "card": [
+    null,
+    5
+  ],
+  "recruit_": [
+    null,
+    2
+  ],
+  "start_upgrading": [
+    [
+      135,
+      507
+    ],
+    5
+  ],
+  "one-tap_speed_up": [
+    [
+      105,
+      970
+    ],
+    7
+  ],
+  "bug_level_0": [
+    null,
+    13
+  ],
+  "new_monster": [
+    null,
+    5
+  ],
+  "load_boost": [
+    null,
+    5
+  ],
+  "development_skills": [
+    [
+      422,
+      203
+    ],
+    5
+  ],
+  "get_now_research": [
+    null,
+    5
+  ],
+  "research": [
+    null,
+    16
+  ],
+  "saw": [
+    null,
+    10
+  ],
+  "more_marches": [
+    [
+      109,
+      337
+    ],
+    7
+  ],
+  "speed_up_blue": [
+    [
+      473,
+      1183
+    ],
+    5
+  ],
+  "gather_speed_up": [
+    null,
+    5
+  ],
+  "one-tap_upgrade": [
+    [
+      425,
+      896
+    ],
+    5
+  ],
+  "claim_healed": [
+    null,
+    5
+  ],
+  "harvest": [
+    [
+      100,
+      681
+    ],
+    5
+  ],
+  "kingroad": [
+    [
+      34,
+      940
+    ],
+    10
+  ],
+  "quest_complete": [
+    [
+      260,
+      365
+    ],
+    6
+  ],
+  "quit": [
+    [
+      277,
+      924
+    ],
+    6
+  ],
+  "holy_revival": [
+    null,
+    5
+  ],
+  "kazuru_farm6": [
+    [
+      0,
+      0
+    ],
+    2
+  ],
+  "scout": [
+    [
+      137,
+      509
+    ],
+    5
+  ],
+  "map": [
+    [
+      33,
+      1175
+    ],
+    1
+  ],
+  "speed_up_march": [
+    "marches",
+    4
+  ],
+  "free": [
+    [
+      79,
+      1205
+    ],
+    2
+  ],
+  "rebels": [
+    null,
+    7
+  ],
+  "belt": [
+    [
+      159,
+      663
+    ],
+    5
+  ],
+  "x_ldplayer": [
+    [
+      676,
+      77
+    ],
+    5
+  ],
+  "join": [
+    null,
+    5
+  ],
+  "go": [
+    [
+      531,
+      1192
+    ],
+    1
+  ],
+  "ok": [
+    [
+      242,
+      834
+    ],
+    5
+  ],
+  "accessory": [
+    [
+      128,
+      961
+    ],
+    5
+  ],
+  "switch": [
+    [
+      127,
+      835
+    ],
+    1
+  ],
+  "blur": [
+    [
+      0,
+      1193
+    ],
+    8
+  ],
+  "conjure_10_times": [
+    null,
+    5
+  ],
+  "use": [
+    [
+      241,
+      1205
+    ],
+    5
+  ],
+  "hammer_use": [
+    [
+      127,
+      779
+    ],
+    5
+  ],
+  "castle_level_10": [
+    [
+      366,
+      361
+    ],
+    1
+  ],
+  "castle_level_3": [
+    null,
+    1
+  ],
+  "set_out": [
+    [
+      523,
+      1193
+    ],
+    1
+  ],
+  "bug_level_2": [
+    [
+      149,
+      948
+    ],
+    9
+  ],
+  "neogeo1": [
+    null,
+    5
+  ],
+  "heroic_evolution": [
+    [
+      626,
+      1045
+    ],
+    7
+  ],
+  "castle_level_4": [
+    null,
+    1
+  ],
+  "donate_blue": [
+    [
+      286,
+      799
+    ],
+    5
+  ],
+  "pack": [
+    null,
+    5
+  ],
+  "lord_skills": [
+    [
+      579,
+      1216
+    ],
+    5
+  ],
+  "avatar_14": [
+    null,
+    5
+  ],
+  "college_icon": [
+    [
+      343,
+      501
+    ],
+    5
+  ],
+  "speed_up": [
+    null,
+    25
+  ],
+  "buy": [
+    [
+      63,
+      515
+    ],
+    5
+  ],
+  "quick_search": [
+    [
+      197,
+      835
+    ],
+    5
+  ],
+  "upgrade_to_max": [
+    [
+      146,
+      759
+    ],
+    5
+  ],
+  "attack": [
+    [
+      199,
+      837
+    ],
+    5
+  ],
+  "battle_power": [
+    [
+      137,
+      509
+    ],
+    5
+  ],
+  "blue_bonus": [
+    null,
+    10
+  ],
+  "tasks": [
+    [
+      0,
+      616
+    ],
+    7
+  ],
+  "hac": [
+    null,
+    5
+  ],
+  "lord_info": [
+    [
+      641,
+      1233
+    ],
+    5
+  ],
+  "ask_help": [
+    null,
+    25
+  ],
+  "help": [
+    [
+      646,
+      1081
+    ],
+    5
+  ],
+  "fortify": [
+    [
+      153,
+      855
+    ],
+    5
+  ],
+  "claim_holy_water": [
+    null,
+    5
+  ],
+  "archers": [
+    [
+      369,
+      105
+    ],
+    5
+  ],
+  "hand": [
+    null,
+    23
+  ],
+  "need_stone": [
+    null,
+    17
+  ],
+  "use_speed": [
+    [
+      274,
+      969
+    ],
+    5
+  ],
+  "camel": [
+    null,
+    5
+  ],
+  "pinata": [
+    null,
+    11
+  ],
+  "hospital_building": [
+    [
+      296,
+      704
+    ],
+    27
+  ],
+  "retry_network": [
+    [
+      107,
+      683
+    ],
+    5
+  ],
+  "lord_skill": [
+    null,
+    5
+  ],
+  "x_news": [
+    [
+      632,
+      157
+    ],
+    20
+  ],
+  "castle_level_8": [
+    null,
+    1
+  ],
+  "horseshoes": [
+    null,
+    10
+  ],
+  "use_stamina": [
+    [
+      507,
+      487
+    ],
+    5
+  ],
+  "withdraw": [
+    "marches",
+    4
+  ],
+  "lord": [
+    [
+      643,
+      869
+    ],
+    1
+  ],
+  "recall_all": [
+    null,
+    5
+  ],
+  "age": [
+    [
+      609,
+      474
+    ],
+    5
+  ],
+  "confirm_speed_up": [
+    [
+      248,
+      931
+    ],
+    5
+  ],
+  "read_claim_all": [
+    [
+      211,
+      1206
+    ],
+    5
+  ],
+  "skill_points_0": [
+    [
+      394,
+      130
+    ],
+    5
+  ],
+  "free_upgrade": [
+    [
+      104,
+      1186
+    ],
+    2
+  ],
+  "realm": [
+    [
+      107,
+      742
+    ],
+    1
+  ],
+  "gmail": [
+    null,
+    5
+  ],
+  "holy_quest": [
+    null,
+    5
+  ],
+  "elite_mines": [
+    [
+      377,
+      109
+    ],
+    2
+  ],
+  "march_limit_0": [
+    [
+      410,
+      212
+    ],
+    1
+  ],
+  "altar": [
+    [
+      205,
+      189
+    ],
+    15
+  ],
+  "alliance_quest": [
+    [
+      65,
+      896
+    ],
+    5
+  ],
+  "leadership": [
+    null,
+    10
+  ],
+  "use_blue": [
+    null,
+    8
+  ],
+  "conquer": [
+    [
+      137,
+      509
+    ],
     5
   ],
   "go_research": [
     null,
     5
   ],
+  "no_help_all": [
+    [
+      271,
+      1183
+    ],
+    5
+  ],
+  "account": [
+    [
+      70,
+      594
+    ],
+    8
+  ],
+  "troops_slider": [
+    null,
+    10
+  ],
+  "avatar_13": [
+    null,
+    5
+  ],
+  "confirm_age": [
+    [
+      281,
+      837
+    ],
+    5
+  ],
+  "castle_level_19": [
+    null,
+    1
+  ],
+  "bug_level_1": [
+    [
+      487,
+      1095
+    ],
+    5
+  ],
+  "exit_game": [
+    null,
+    5
+  ],
+  "plus": [
+    [
+      434,
+      1203
+    ],
+    5
+  ],
+  "march_limit_3": [
+    [
+      456,
+      218
+    ],
+    1
+  ],
+  "castle_level_2": [
+    null,
+    5
+  ],
+  "clothes": [
+    [
+      481,
+      658
+    ],
+    5
+  ],
+  "helmet": [
+    [
+      489,
+      366
+    ],
+    5
+  ],
+  "infantry": [
+    [
+      17,
+      108
+    ],
+    5
+  ],
+  "confirm_rss": [
+    null,
+    5
+  ],
+  "claim_holy_quest": [
+    null,
+    5
+  ],
+  "zahino": [
+    null,
+    5
+  ],
+  "military": [
+    [
+      501,
+      410
+    ],
+    5
+  ],
+  "previous": [
+    [
+      55,
+      877
+    ],
+    70
+  ],
+  "daily_quest_claim": [
+    null,
+    21
+  ],
+  "get_now": [
+    null,
+    17
+  ],
+  "kazuru_farm5": [
+    null,
+    5
+  ],
+  "search": [
+    [
+      643,
+      982
+    ],
+    1
+  ],
+  "confirm_shell": [
+    null,
+    5
+  ],
+  "change_name_green": [
+    [
+      282,
+      759
+    ],
+    5
+  ],
+  "acc_list": [
+    [
+      300,
+      365
+    ],
+    7
+  ],
+  "claim_all": [
+    null,
+    5
+  ],
+  "expansion": [
+    null,
+    10
+  ],
+  "kingroad_claim": [
+    "kingroad",
+    8
+  ],
+  "castle_building": [
+    [
+      0,
+      241
+    ],
+    7
+  ],
+  "iron_type": [
+    [
+      361,
+      1032
+    ],
+    1
+  ],
+  "+": [
+    [
+      335,
+      504
+    ],
+    15
+  ],
   "no": [
+    [
+      430,
+      695
+    ],
+    5
+  ],
+  "event_claim": [
+    null,
+    15
+  ],
+  "hospital": [
+    null,
+    18
+  ],
+  "kingroad_done": [
+    [
+      260,
+      1047
+    ],
+    16
+  ],
+  "food_type": [
+    [
+      42,
+      1054
+    ],
+    1
+  ],
+  "unlock_land": [
+    [
+      257,
+      784
+    ],
+    5
+  ],
+  "purchase": [
+    [
+      125,
+      688
+    ],
+    5
+  ],
+  "conjure": [
     null,
     5
   ],
-  "recruit": [
+  "avatar_10": [
     null,
     5
   ],
-  "set_out": [
+  "avatar_11": [
     null,
     5
+  ],
+  "castle_level_14": [
+    [
+      363,
+      361
+    ],
+    5
+  ],
+  "rising_road": [
+    null,
+    5
+  ],
+  "farm,hacen": [
+    null,
+    5
+  ],
+  "select": [
+    [
+      501,
+      433
+    ],
+    5
+  ],
+  "continue_game": [
+    [
+      279,
+      967
+    ],
+    4
   ],
   "beast_emerge": [
     null,
     5
   ],
-  "pick_avatar": [
+  "research_blue": [
+    [
+      443,
+      950
+    ],
+    5
+  ],
+  "check": [
+    null,
+    18
+  ],
+  "mages": [
+    [
+      561,
+      108
+    ],
+    5
+  ],
+  "confirm_use_stamina": [
+    [
+      295,
+      699
+    ],
+    5
+  ],
+  "max_items": [
+    [
+      608,
+      685
+    ],
+    5
+  ],
+  "delete_mail": [
+    [
+      253,
+      781
+    ],
+    5
+  ],
+  "plow": [
     null,
     5
   ],
@@ -1010,100 +1638,26 @@
     null,
     5
   ],
-  "age": [
-    null,
+  "battle": [
+    [
+      298,
+      635
+    ],
     5
   ],
-  "quest": [
-    null,
+  "heal": [
+    [
+      522,
+      1201
+    ],
     5
   ],
-  "weapon": [
-    null,
-    5
-  ],
-  "switch_level": [
-    null,
-    5
-  ],
-  "conjure_10_times": [
-    null,
-    5
-  ],
-  "saw": [
-    null,
-    5
-  ],
-  "military": [
-    null,
-    5
-  ],
-  "change_name": [
-    null,
-    5
-  ],
-  "one-tap_speed_up": [
+  "dragons_domain": [
     null,
     5
   ],
   "event_arrow": [
     null,
-    5
-  ],
-  "castle_level_14": [
-    null,
-    5
-  ],
-  "withdraw": [
-    null,
-    5
-  ],
-  "more_marches": [
-    null,
-    5
-  ],
-  "go": [
-    null,
-    5
-  ],
-  "plus": [
-    null,
-    5
-  ],
-  "leo": [
-    null,
-    5
-  ],
-  "bug_level_0": [
-    null,
-    13
-  ],
-  "free_crystal": [
-    null,
-    5
-  ],
-  "mail": [
-    null,
-    5
-  ],
-  "ask_help": [
-    null,
-    5
-  ],
-  "quick_search": [
-    null,
-    5
-  ],
-  "march_limit_0": [
-    null,
-    5
-  ],
-  "unlock_land": [
-    null,
-    5
-  ],
-  "avatar_10": [
-    null,
-    5
+    30
   ]
 }
