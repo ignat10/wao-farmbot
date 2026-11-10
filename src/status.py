@@ -3,6 +3,7 @@ from __future__ import annotations
 from enum import Enum
 
 from src.objects import objects, resources_need, avatars
+from src.utils import log_raise
 
 
 class MineType(Enum):
@@ -41,4 +42,8 @@ def check_avatar() -> int | None:
     for num, avatar in avatars.items():
         if avatar.exists():
             return num
-    return None
+
+    if objects['pause'].exists():
+        return None
+
+    log_raise("Loaded, but no avatar was found.")
