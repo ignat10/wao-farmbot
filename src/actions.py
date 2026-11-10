@@ -272,6 +272,8 @@ class Castle:
         self.avatar = avatar
         logger.info(f"successfully switched {self.name}'s avatar to {avatar}")
         self.close_ad()
+        if not self.avatar_exists(10):
+            log_raise("Avatar has been just set, but it is not recognised.")
 
     @cached_property
     def level(self) -> int:
@@ -520,9 +522,15 @@ class Castle:
                 sleep(1.5)
                 back()
 
+    def avatar_exists(self, timeout: int | float = 0):
+        avatar = self.avatar
+        assert avatar is not None, f"cannot check {self.name} avatar, because it is not set."
+        return avatars[avatar].exists(timeout)
+
     def log_into_account(self, green_regular_position: int) -> None:
         """logs into current account. from city or map."""
-        if self.account is None:
+        account = self.account
+        if account is None:
             self.new_account()
             return
         assert (
@@ -530,7 +538,7 @@ class Castle:
         ), f"called log_into_account for {self.name}, but google was not set in {CASTLES_DB_PATH}"
         assert self.avatar is not None, f"called log_into_account for {self.name}, but avatar was not set in {CASTLES_DB_PATH}"
 
-        while not avatars[self.avatar].exists(): #type: ignore
+        while not self.avatar_exists():
             logger.info(f"logging into {self.name}")
             reset_screen()
             self.close_ad()
@@ -556,8 +564,8 @@ class Castle:
                     objects['acc_list'].exists(10)
             else:
                 continue
-            is_green = objects["green_castle"].exists() and self.account > green_regular_position
-            if not objects["castle"].tap(index=self.account - is_green):
+            is_green = objects["green_castle"].exists() and account > green_regular_position
+            if not objects["castle"].tap(index=account - is_green):
                 log_raise("Google account cooldown.")
             objects["confirm"].force_tap(20)
             logger.info("logged in.")
