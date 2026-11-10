@@ -4,7 +4,7 @@ from time import sleep
 
 from screen_objects import device_config
 
-from src.paths import INSTANCES_PATH
+from src.paths import INSTANCES_PATH, DOCKER_IMAGE_DIR
 
 
 def _run_lines(command: list[str]) -> list[str]:
@@ -12,11 +12,11 @@ def _run_lines(command: list[str]) -> list[str]:
 
 
 def _instances() -> set[str]:
-    return set(_run_lines(["ldconsole", "list"]))
+    return set(_run_lines(["docker", "ps", "-a", "--filter", f"ancestor={DOCKER_IMAGE_DIR}", "--format", '{{.Names}}']))
 
 
 def _running_instances() -> set[str]:
-    return set(_run_lines(["ldconsole", "runninglist"]))
+    return set(_run_lines(["docker", "ps", "--filter", f"ancestor={DOCKER_IMAGE_DIR}", "--format", '{{.Names}}']))
 
 
 def _devices() -> set[str]:
@@ -38,10 +38,9 @@ def launch_instance(name: str) -> None:
         ), f"instance name {name} not found in serials: {serials} from {INSTANCES_PATH}"
 
     if name not in _running_instances():
-        run(["ldconsole", "launch", "--name", name])
+        run(["docker", "start", name])
         sleep(1)
-    while not serial in _devices():
-        sleep(1)
+
     device_config(serial=serial, app="camel")
     print("loaded instance")
 
