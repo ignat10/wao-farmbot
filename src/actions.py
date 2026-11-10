@@ -237,21 +237,21 @@ class Castle:
             if objects["confirm_bonus"].tap():
                 sleep(1.2)
             else:
-                swipe_center(choice(SWIPE_DIRECTIONS), SwipeSpeed.Slow, 4)
-            sleep(1)
+                swipe_center(choice(SWIPE_DIRECTIONS), SwipeSpeed.Slow, 2)
         sleep(1.5)
 
     def change_name(self) -> None:
         objects["avatar"].force_tap(3)
-        if objects["x_news"].tap(1.3):
-            sleep(1.5)
+        if objects["x_news"].tap(1):
+            sleep(1)
         objects["change_name"].force_tap(4)
-        sleep(0.9)
-        objects["2-16_characters"].force_tap(5)
+        sleep(1)
+        objects["2-16_characters"].force_tap(20)
         sleep(1.2)
         write(self.name)
-        sleep(3)
-        objects["change_name_green"].force_tap(5)
+        sleep(2)
+        back()
+        objects["change_name_green"].force_tap(10)
         sleep(1.5)
         if objects["change_name_green"].exists():
             log_raise(f"Name {self.name} already taken.")
@@ -546,6 +546,8 @@ class Castle:
                 continue
             if not (objects["login"].tap(3) and objects["gmail"].exists(10)):
                 continue
+            reset_screen()
+            sleep(1)
             objects["gmail"].force_tap(index=self.google)
             for _ in range(15):
                 if objects["acc_list"].exists(1):
@@ -1010,6 +1012,7 @@ class Castle:
                 or objects["go_upgrade"].tap()
             ):
                 break
+            sleep(0.5)
 
         return self.speed_up()
 
@@ -1310,8 +1313,9 @@ class Castle:
             objects["plus"].tap(times=5)
             objects["minus"].tap(times=MAX_MINE_LEVEL - level)
             objects["go"].tap(times=4, interval=0.1)
+            sleep(2)
 
-            if objects["gather"].tap(4):
+            if objects["gather"].tap(2):
                 if self._set_out():
                     self.mine_type = chain([(level, need_type)], self.mine_type)
                     return
