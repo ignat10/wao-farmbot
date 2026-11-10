@@ -17,7 +17,6 @@ from screen_objects import (
     ScreenObject,
 )
 
-from src.device import shake
 from src.castles import update_castle, get_accounts_in_google
 from src.objects import (
     objects,
@@ -638,11 +637,6 @@ class Castle:
         restart_app()
         cls.load()
 
-    @staticmethod
-    def claim_rss():
-        logger.info("shaking")
-        shake()
-        sleep(5)
 
     @classmethod
     def claim_quest(cls):
@@ -1357,7 +1351,6 @@ class Castle:
 
     def grow(self):
         self.bind_account()
-        self.claim_rss()
         _ = self.level
         _ = self.marches
         if self.last_login_minutes // 60 > 12:
