@@ -121,7 +121,9 @@ def get_available() -> str | None:
                 SELECT name
                 FROM castles
                 WHERE is_busy = 0
-                ORDER BY last_login ASC
+                ORDER BY
+                    CASE WHEN account IS NULL THEN 0 ELSE 1 END ASC,
+                    last_login ASC
                 LIMIT 1
             )
             RETURNING name
