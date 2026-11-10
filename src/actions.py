@@ -77,7 +77,7 @@ class Castle:
         self._last_login = last_login
 
         self.no_speed: int = 0
-        self.last_gather_at: datetime | None = None
+        self.last_gather_at: datetime = datetime.fromtimestamp(0, tz=timezone.utc)
         self.stamina = True
         self.mine_type = (
             (level, mine)
@@ -126,10 +126,8 @@ class Castle:
         return minutes
 
     @property
-    def last_gather_ago(self) -> int | None:
+    def last_gather_ago(self) -> int:
         """Return elapsed gather time in seconds."""
-        if self.last_gather_at is None:
-            return None
         return int((datetime.now() - self.last_gather_at).total_seconds())
 
     def set_last_gather_now(self) -> None:
