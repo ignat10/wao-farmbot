@@ -18,7 +18,7 @@ from screen_objects import (
 )
 
 from src.device import shake
-from src.castles import get_column, update_castle
+from src.castles import update_castle, get_accounts_in_google
 from src.objects import (
     objects,
     avatars,
@@ -300,7 +300,7 @@ class Castle:
             if objects["gmail"].exists(40):
                 objects["gmail"].force_tap(index=gmail)
         if objects["undo_bind"].exists(50):
-            account_number = get_column("google").count(gmail) - 1  # self account
+            account_number = get_accounts_in_google(gmail)
             logger.info(
                 f"bound account {self.name} to {gmail} gmail. saved it as account number {account_number}"
             )

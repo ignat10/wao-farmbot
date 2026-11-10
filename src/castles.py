@@ -36,6 +36,13 @@ def get_column(column: str) -> list[Any]:
         return [row[0] for row in connection.execute(f"SELECT {column} FROM castles")]
 
 
+def get_accounts_in_google(google: int) -> int:
+    with _connect() as connection:
+        return connection.execute(
+            f"SELECT COUNT(*) AS count FROM castles WHERE account IS NOT NULL AND google = {google};"
+        ).fetchone()[0]
+
+
 def get_castle_name_by_avatar(avatar_number: int) -> str | None:
     with _connect() as connection:
         row = connection.execute(
