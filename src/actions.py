@@ -592,6 +592,7 @@ class Castle:
                 sleep(1)
                 if objects['confirm_age'].tap(3):
                     logger.info("confirmed age")
+            objects['cancel'].tap()
             objects['x_ldplayer'].tap()
             objects['retry_network'].tap()
             if perf_counter() - start > 200:
