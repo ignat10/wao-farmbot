@@ -1,7 +1,8 @@
 from screen_objects import start_app
 
+from src.actions import Castle
 from src.castles import iter_castles, release, get_castle_name_by_avatar, get_castle
-from src.utils import parse_instance, log_raise
+from src.utils import parse_instance
 from src.device import launch_instance
 from src.status import check_avatar
 
@@ -12,22 +13,27 @@ def main():
     from src.logger import logger # Import after launch_instance, that logger will have instance name
     start_app()
     castles = iter_castles()
-    castle = next(castles, None)
-    if castle is None:
-        return
+    castle = None
     try:
-        castle.load()
+        Castle.load()
         avatar = check_avatar()
+        castle = next(castles, None)
+        if castle is None:
+            return
         if avatar is None:
-            log_raise("Loaded, but no avatar was found.")
-        name = get_castle_name_by_avatar(avatar)
-        assert name is not None
-        logger.info(f"Currently logged into {name}")
-        account = get_castle(name)['account']
-        castle.log_into_account(account)
+            assert castle.account is None, f"Loaded into start screen, but every castle is bound."
+            castle.new_account()
+        else:
+            name = get_castle_name_by_avatar(avatar)
+            assert name is not None
+            logger.info(f"Currently logged into {name}")
+            account = get_castle(name)['account']
+            castle.log_into_account(account)
+
     except:
         logger.exception("Exception occurred while logging into first castle.")
-        release(castle.name)
+        if castle is not None:
+            release(castle.name)
         raise
 
     while True:
