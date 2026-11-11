@@ -1251,13 +1251,12 @@ class Castle:
             self.close_ad()
             return
         if objects["search"].tap():
-            objects["monster"].force_exists(10)
-        if objects["monster"].tap():
+            sleep(1)
+            objects["monster"].force_tap(10)
             if randrange(5) == 2:
                 objects['monster_plus'].force_tap(10)
-            objects["go"].force_exists(10)
-        objects["go"].tap(times=5, interval=0.2)
-        sleep(1)
+            objects["go"].force_tap(10, times=5, interval=0.2)
+            sleep(1)
         if not self.withdraw() and objects["arrow"].exists(2):
             objects["arrow"].force_tap(times=2, interval=0.2)
         for _ in range(30):
