@@ -1024,7 +1024,9 @@ class Castle:
             self.to_map()
             self.close_ad()
             self.upgrade_castle()
-        if objects["upgrade"].tap(4):
+            return
+        sleep(1)
+        if objects["upgrade"].tap(2):
             sleep(2)
             self._build_need()
         elif objects['speed_up'].tap():
