@@ -583,10 +583,10 @@ class Castle:
             or objects["x"].exists()
             or objects['bella'].exists()
             or objects['x_swap'].exists()
+            or objects['map'].exists()
         ):
             reset_screen()
             if objects["pause"].exists():
-                self.new_account()
                 return
             if objects['age'].tap():
                 sleep(1)
