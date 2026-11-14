@@ -12,7 +12,6 @@ from screen_objects import (
     reset_screen,
     write,
     SwipeSpeed,
-    Direction,
     ScreenObject,
 )
 
@@ -34,8 +33,6 @@ from src.utils import log_raise, start_game
 
 MAX_MINE_LEVEL = 6
 MINE_LEVELS_SEQUENCE = [5, 6, 4, 3, 2, 1]
-
-SWIPE_DIRECTIONS = (Direction.Up, Direction.Down, Direction.Right, Direction.Left)
 
 
 def restart_app():
@@ -169,11 +166,9 @@ class Castle:
             logger.info("account created")
 
         objects["pause"].force_exists(100)
-        swipe_center(Direction.Up, SwipeSpeed.Slow, 1.7)
-        swipe_center(Direction.Right, SwipeSpeed.Slow, 0.75)
-        sleep(10)
-        swipe_center(Direction.Up, SwipeSpeed.Fast, 1)
-        swipe_center(Direction.Right, SwipeSpeed.Fast, 1)
+        swipe_center(30, SwipeSpeed.Slow, 1.9)
+        sleep(7)
+        swipe_center(45, SwipeSpeed.Fast, 1)
         self.kill_monsters()
         logger.info("finished 0 level")
         objects["bella"].force_exists(30)
@@ -235,7 +230,7 @@ class Castle:
             if objects["confirm_bonus"].tap():
                 sleep(1.2)
             else:
-                swipe_center(choice(SWIPE_DIRECTIONS), SwipeSpeed.Slow, 2)
+                swipe_center(randrange(360), SwipeSpeed.Slow, 2)
         sleep(1.5)
 
     def change_name(self) -> None:
@@ -774,7 +769,7 @@ class Castle:
         logger.info("claiming pinata")
         sleep(2)
         for _ in range(3):
-            swipe_center(Direction.Up, SwipeSpeed.Turbo, 0.5)
+            swipe_center(0, SwipeSpeed.Turbo, 0.5)
             sleep(1)
         if objects['pinata_task'].tap(2) and objects['pinata'].exists(3):
             for _ in range(3):
@@ -805,7 +800,7 @@ class Castle:
             if objects["upgrade_to_max"].exists():
                 break
             while not objects["lord_skill"].tap(1):
-                swipe_center(Direction.Up, SwipeSpeed.Fast, 0.4)
+                swipe_center(0, SwipeSpeed.Fast, 0.4)
                 sleep(1.5)
             objects["upgrade_to_max"].force_tap(3)
         cls.close_ad()
@@ -911,9 +906,9 @@ class Castle:
             objects["military"].force_tap()
             match marches:
                 case 2:
-                    swipe_center(Direction.Up, SwipeSpeed.Normal, 1)
+                    swipe_center(0, SwipeSpeed.Normal, 1)
                 case 3:
-                    swipe_center(Direction.Up, SwipeSpeed.Turbo, 0.7)
+                    swipe_center(0, SwipeSpeed.Turbo, 0.7)
             sleep(1)
 
             if not objects["legion"].tap(2):
@@ -1179,7 +1174,7 @@ class Castle:
             if objects['join'].tap():
                 break
             objects["apply"].tap_each()
-            swipe_center(Direction.Up, SwipeSpeed.Fast, 0.5)
+            swipe_center(0, SwipeSpeed.Fast, 0.5)
             sleep(2)
         cls.close_ad()
 
@@ -1203,7 +1198,7 @@ class Castle:
             cls.close_ad()
             objects['alliance'].force_tap()
             sleep(1.5)
-        swipe_center(Direction.Up, SwipeSpeed.Slow, 1)
+        swipe_center(0, SwipeSpeed.Slow, 1)
         objects['fiend_trial'].force_tap(10)
         sleep(2)
         while objects['battle'].tap(1):
