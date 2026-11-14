@@ -8,7 +8,6 @@ from screen_objects import (
     back,
     tap_center,
     swipe_center,
-    start_app,
     close_app,
     reset_screen,
     write,
@@ -31,7 +30,7 @@ from src.objects import (
 from src.paths import CASTLES_DB_PATH
 from src.status import MineType, Task
 from src.logger import logger
-from src.utils import log_raise
+from src.utils import log_raise, start_game
 
 MAX_MINE_LEVEL = 6
 MINE_LEVELS_SEQUENCE = [5, 6, 4, 3, 2, 1]
@@ -42,7 +41,7 @@ SWIPE_DIRECTIONS = (Direction.Up, Direction.Down, Direction.Right, Direction.Lef
 def restart_app():
     close_app()
     sleep(4.5)
-    start_app()
+    start_game()
 
 
 def value_assert(name: str, value: object, typ: type) -> None:

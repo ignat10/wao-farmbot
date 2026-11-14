@@ -1,7 +1,7 @@
 from argparse import ArgumentParser
 from typing import NoReturn
 
-from screen_objects import screenshot
+from screen_objects import screenshot, start_app
 
 
 def log_raise(msg: str) -> NoReturn:
@@ -16,3 +16,7 @@ def parse_instance() -> str:
     assert instance is not None, f"required instance name"
     assert isinstance(instance, str)
     return instance
+
+
+def start_game() -> None:
+    start_app(["-e", "unity", "-force-gles"])
