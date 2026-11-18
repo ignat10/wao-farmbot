@@ -149,11 +149,11 @@ class Castle:
 
     @staticmethod
     def close_bella() -> bool:
-        if not objects["bella"].exists():
-            return False
+        tapped = False
         while objects["bella"].tap():
             sleep(1.5)
-        return True
+            tapped = True
+        return tapped
 
     def new_account(self) -> None:
         """creates new account, upgrades castle to level 4. from city or map."""
