@@ -1,5 +1,6 @@
 import argparse
-from pprint import pprint
+
+from tabulate import tabulate
 
 from src.castles import (
     add_castle,
@@ -11,9 +12,26 @@ from src.castles import (
     DATA_COLUMNS,
 )
 
+def print_castles_table() -> None:
+    castles = sorted(
+        [get_castle(name) for name in get_column("name")],
+        key=lambda castle: (
+            castle["google"],
+            castle["account"] if castle["account"] is not None else -1,
+        ),
+    )
+    print(tabulate(castles, headers="keys", tablefmt="rounded_outline"))
+
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Manage castles.")
+    parser.add_argument(
+        "action",
+        nargs="?",
+        type=str.lower,
+        choices=["add", "edit", "remove", "remove-all", "list"],
+        help="Action to perform (add/edit/remove/remove-all/list)",
+    )
     parser.add_argument(
         "-v",
         "--verbose",
@@ -22,7 +40,11 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    command = input("Action (add/edit/remove/remove-all/list): ").strip().lower()
+    command = (
+        args.action
+        if args.action is not None
+        else input("Action (add/edit/remove/remove-all/list): ").strip().lower()
+    )
     match command:
         case "add":
             name = input("Castle name: ").strip()
@@ -32,7 +54,7 @@ def main() -> None:
         case "edit":
             name = input("Castle name: ").strip()
             column = input(f"Field {DATA_COLUMNS}: ").strip().lower()
-            value = int(input(f"New {column}: "))
+            value = input(f"New {column}: ")
             update_castle(name, column, value)
             print(f"Updated {name}: {column} = {value}")
         case "remove":
@@ -47,12 +69,15 @@ def main() -> None:
             else:
                 print("Cancelled")
         case "list":
-            names = get_column("name")
-            if args.verbose:
-                for name in names:
-                    pprint(get_castle(name), sort_dicts=False)
+            names = sorted(get_column("name"))
+            if not names:
+                print("No castles found.")
+            elif args.verbose:
+                print_castles_table()
             else:
-                pprint(names)
+                for idx, name in enumerate(names, 1):
+                    print(f"  {idx}. {name}")
+                print(f"\nTotal: {len(names)} castles\n")
 
 
 if __name__ == "__main__":

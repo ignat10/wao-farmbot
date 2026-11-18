@@ -1,3 +1,4 @@
 python-dotenv
 screen-objects
 pytest
+tabulate

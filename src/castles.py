@@ -8,7 +8,7 @@ from src.paths import CASTLES_DB_PATH
 if TYPE_CHECKING:
     from src.actions import Castle
 
-DATA_COLUMNS = frozenset({"name", "last_login", "google", "account", "avatar"})
+DATA_COLUMNS = ("name", "google", "account", "last_login", "avatar")
 
 
 def _connect() -> Connection:
