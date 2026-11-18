@@ -565,6 +565,7 @@ class Castle:
             logger.info("logged in.")
             sleep(7.5)
             self.load()
+            self.close_ad()
 
     @classmethod
     def load(cls) -> None:
@@ -596,7 +597,6 @@ class Castle:
                 return
             sleep(1.5)
         logger.info("loaded.")
-        cls.close_ad()
 
     @classmethod
     def close_ad(cls) -> None:
@@ -639,7 +639,7 @@ class Castle:
         logger.info("unable to close. restart app.")
         restart_app()
         cls.load()
-
+        cls.close_ad()
 
     @classmethod
     def claim_quest(cls):
