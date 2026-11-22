@@ -62,14 +62,20 @@ docker_cmd = [
     "ro.product.model=Pixel 5",
 ]
 
-run(docker_cmd).check_returncode()
+res = run(docker_cmd, capture_output=True, text=True)
+assert res.returncode == 0, res.stderr
 
-sleep(1)
+sleep(5)
 device_config(serial=serial)
 
 
-run_adb(["shell", "pm", "disable-user", "--user", "0", "com.google.android.setupwizard"], check=True)
-run_adb(["shell", "pm", "disable-user", "--user", "0", "com.google.android.provision"], check=True)
+PACKAGES = {
+    "com.google.android.setupwizard",
+    "com.android.provision",
+}
+
+for pkg in PACKAGES:
+    run_adb(["shell", "pm", "disable-user", "--user", "0", pkg], check=True)
 
 run_adb(["shell", "settings", "put", "global", "device_provisioned", "1"], check=True)
 run_adb(["shell", "settings", "put", "secure", "user_setup_complete", "1"], check=True)
