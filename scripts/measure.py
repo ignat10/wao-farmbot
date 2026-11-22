@@ -1,43 +1,46 @@
-from json import load
+from pprint import pprint
 from time import perf_counter
+
+from screen_objects import reset_screen
 
 from src.device import launch_instance
 from src.utils import parse_instance
 from src.objects import objects
-from src.paths import SAMPLES_DIR
 
 launch_instance(parse_instance())
 
-screencap_timer = perf_counter()
-objects.values().__iter__().__next__().exists()  # screencap
-screencap = perf_counter() - screencap_timer
+template = next(iter(objects.values()))
+template.exists()
+reset_screen()
 
-with open(SAMPLES_DIR.parent / "objects.json") as f:
-    data = load(f)
-assert isinstance(data, dict)
+screencaps = 10
+screencaps_time = 0
+for _ in range(screencaps):
+    start = perf_counter()
+    template.exists()
+    end = perf_counter()
+    template.exists()
+    after = perf_counter()
+    reset_screen()
+    screencaps_time += (end - start) - (after - end)
 
-fixed_elapsed = unfixed_elapsed = 0.0
+screencap = screencaps_time / screencaps
 
 
-def exists_all():
-    global fixed_elapsed, unfixed_elapsed
+def exists_all() -> tuple[set[str], float]:
+    found = set()
+    start = perf_counter()
     for name, obj in objects.items():
-        start = perf_counter()
-        obj.exists()
-        end = perf_counter()
-        delta = end - start
-        if data[name][0] is None:  # if point is not fixed:
-            unfixed_elapsed += delta
-        else:
-            fixed_elapsed += delta
+        if obj.exists():
+            found.add(name)
+    elapsed = perf_counter() - start
+    return found, elapsed
 
 
-exists_all()
-fixed_load, unfixed_load = fixed_elapsed, unfixed_elapsed
-fixed_elapsed = unfixed_elapsed = 0.0
-exists_all()
-load = fixed_load - fixed_elapsed + unfixed_load - unfixed_elapsed
+existing_objects, total_elapsed = exists_all()
 
+print("Existing objects:")
+pprint(existing_objects)
 print(
-    f"fixed took {fixed_elapsed:2f}. not fixed: {unfixed_elapsed:2f}, load: {load:2f}, screencap: {screencap:2f}"
+    f"\ntotal took: {total_elapsed:.2f}s, screencap: {screencap:.2f}s"
 )
