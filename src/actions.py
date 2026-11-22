@@ -156,82 +156,95 @@ class Castle:
         return tapped
 
     def new_account(self) -> None:
-        """creates new account, upgrades castle to level 4. from city or map."""
-        print("new account")
-        if objects["avatar"].tap():
-            objects["account"].force_tap(10)
-            objects["new_game"].force_tap(10)
-            objects["confirm"].force_tap(10)
-            objects["realm"].force_tap(10)
-            logger.info("account created")
+        """creates new game account."""
+        logger.info(f"new account {self.name}")
+        if not objects['pause'].exists():
+            while not (
+                objects["avatar"].tap()
+                and objects["account"].tap(3)
+                and objects["new_game"].tap(3)
+                and objects["confirm"].tap(3)
+                and objects["realm"].tap(5)
+            ):
+                self.close_ad()
+                reset_screen()
+            logger.info(f"created account {self.name}")
+            objects["pause"].force_exists(100)
 
-        objects["pause"].force_exists(100)
-        swipe_center(30, SwipeSpeed.Slow, 1.9)
-        sleep(7)
-        swipe_center(45, SwipeSpeed.Fast, 1)
-        self.kill_monsters()
-        logger.info("finished 0 level")
-        objects["bella"].force_exists(30)
-        self.close_bella()
-        self.challenge()  # first level
-        logger.info("finished 1st level")
-        sleep(1.5)
-        self.close_bella()
-        self.challenge()
-        logger.info("finished 2nd level")
-        objects["bella"].force_exists(10)
-        self.close_bella()
-        objects['backhand'].force_tap(10)
-        objects["first_castle"].force_tap(10)
-        sleep(1)
-        objects["upgrade"].force_tap(10)
-        objects["upgrade_blue"].force_tap(10)
-        objects["bella"].force_exists(10)
-        self.close_bella()
-        objects["new_monster"].force_tap(10)
-        self.challenge()
-        logger.info("finished 3rd level")
-        objects["backhand"].force_tap(10)
-        objects["bella"].force_exists(10)
-        self.close_bella()
-        objects["kingroad"].force_tap(10)
-        sleep(1.5)
-        back()
-        sleep(1)
-        self.bind_account()
-        self.claim_mail()
-        self.change_name()
-        self.change_avatar()
-        logger.info(f"account created, bound, named and customized. ")
+        while True:
+            start_time = perf_counter()
+            while perf_counter() - start_time < 15:
+                if objects["bella"].exists():
+                    self.close_bella()
+                    break
+
+                for o in bug_levels:
+                    o.tap()
+
+                if objects['challenge'].tap() or objects['bright_challenge'].tap() or objects['pause'].exists():
+                    self.kill_monsters()
+                    break
+
+                if objects['backhand'].tap():
+                    break
+
+                if objects['kingroad'].tap():
+                    sleep(1.5)
+                    back()
+                    sleep(1)
+                    self.bind_account()
+                    self.claim_mail()
+                    self.change_name()
+                    self.change_avatar()
+                    logger.info(f"account created, bound, named and customized. ")
+                    return
+
+                if objects['first_castle'].tap():
+                    sleep(1)
+                    if objects["upgrade"].tap(2):
+                        objects["upgrade_blue"].force_tap(10)
+                        break
+
+                objects["new_monster"].tap()
+
+                reset_screen()
+            else:
+                logger.info("new account timeout. restart app.")
+                restart_app()
+                self.load()
 
     @classmethod
     def challenge(cls) -> None:
         logger.info("challenging")
-        while not (objects["pause"].exists() or objects['blue_bonus'].exists()):
-            for obj in bug_levels:
-                obj.tap()
-            objects["challenge"].tap() or objects["bright_challenge"].tap()
+        for _ in range(3):
+            if objects["pause"].exists() or objects['blue_bonus'].exists():
+                cls.kill_monsters()
+                return
+            objects["challenge"].tap(1) or objects["bright_challenge"].tap(1)
             reset_screen()
-            sleep(1)
-        cls.kill_monsters()
+        log_raise("Not found challenge button while challenging")
 
     @classmethod
-    def kill_monsters(cls) -> None:
-        logger.info("killing monsters")
+    def kill_monsters(cls):
+        swipe_center(27, SwipeSpeed.Slow, 1.8)
+        sleep(10)
+        swipe_center(30, SwipeSpeed.Fast, 1)
         for _ in range(50):
+            objects['cancel'].tap()
             if (
                 objects["quest_complete"].tap()
                 or objects["quit"].tap()
                 or objects["backhand"].exists()
             ):
-                break
+                return
             elif objects["blue_bonus"].tap():
                 objects["confirm_bonus"].exists(3)
             if objects["confirm_bonus"].tap():
                 sleep(1.2)
             else:
                 swipe_center(randrange(360), SwipeSpeed.Slow, 2)
-        sleep(1.5)
+        restart_app()
+        cls.load()
 
     def change_name(self) -> None:
         objects["avatar"].force_tap(3)
@@ -292,14 +305,16 @@ class Castle:
         objects["account"].force_tap(3)
         if not objects["undo_bind"].exists():
             objects["bind"].force_tap(3)
-            if objects["gmail"].exists(40):
-                objects["gmail"].force_tap(index=gmail)
-        if objects["undo_bind"].exists(50):
-            account_number = get_accounts_in_google(gmail)
-            logger.info(
-                f"bound account {self.name} to {gmail} gmail. saved it as account number {account_number}"
-            )
-            self.account = account_number
+            objects["gmail"].tap(20, index=gmail)
+
+        if not objects["undo_bind"].exists(20):
+            log_raise("Error in castle binding. check if there is place left for current realm")
+
+        account_number = get_accounts_in_google(gmail)
+        logger.info(
+            f"bound account {self.name} to {gmail} gmail. saved it as account number {account_number}"
+        )
+        self.account = account_number
         self.close_ad()
 
     def kingroad_task(self) -> bool:
@@ -486,14 +501,13 @@ class Castle:
             objects["donate_blue"].tap(times=4, interval=0.6)
             objects["donate_confirm"].tap(3)
 
-        elif objects["bright_challenge"].exists():
-            self.challenge()
-        if (
-            objects["pause"].exists()
+        elif (
+            objects["bright_challenge"].exists()
+            or objects["pause"].exists()
             or objects["blue_bonus"].tap()
             or objects["confirm_bonus"].tap()
         ):
-            self.kill_monsters()
+            self.challenge()
 
         logger.info("kingroad task finished")
 
