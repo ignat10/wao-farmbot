@@ -14,7 +14,6 @@ def main():
     castle = None
     try:
         Castle.load()
-        Castle.close_ad()
         avatar = check_avatar()
         castle = next(castles, None)
         if castle is None:
