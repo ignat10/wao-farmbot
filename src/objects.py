@@ -264,6 +264,7 @@ ScreenObjectName = Literal[
     "confirm",
     "no",
     "exit_game",
+    "castle_level_1",
     "castle_level_2",
     "castle_level_3",
     "castle_level_4",
