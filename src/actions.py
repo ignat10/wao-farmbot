@@ -158,16 +158,20 @@ class Castle:
     def new_account(self) -> None:
         """creates new game account."""
         logger.info(f"new account {self.name}")
-        if not objects['pause'].exists():
-            while not (
-                objects["avatar"].tap()
-                and objects["account"].tap(3)
-                and objects["new_game"].tap(3)
-                and objects["confirm"].tap(3)
-                and objects["realm"].tap(5)
-            ):
+        if not (objects['pause'].exists() or objects['lord_avatar'].exists()):
+            for _ in range(10):
+                if (
+                    objects["avatar"].tap()
+                    and objects["account"].tap(3)
+                    and objects["new_game"].tap(3)
+                    and objects["confirm"].tap(3)
+                    and objects["realm"].tap(5)
+                ):
+                    break
                 self.close_ad()
                 reset_screen()
+            else:
+                log_raise(f"Couldn't create account via avatar/account/new_account.")
             logger.info(f"created account {self.name}")
             objects["pause"].force_exists(100)
 

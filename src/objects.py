@@ -220,6 +220,7 @@ ScreenObjectName = Literal[
     "confirm_age",
     "cancel",
     "retry_network",
+    "lord_avatar",
     "pause",
     "blue_bonus",
     "confirm_bonus",

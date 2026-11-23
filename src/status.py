@@ -43,7 +43,7 @@ def check_avatar() -> int | None:
         if avatar.exists():
             return num
 
-    if objects['pause'].exists():
+    if objects['pause'].exists() or objects['lord_avatar'].exists():
         return None
 
     log_raise("Loaded, but no avatar was found.")
