@@ -631,14 +631,13 @@ class Castle:
             if objects["exit_game"].exists():
                 logger.info("invalid token.")
                 break
-            if objects["help"].tap():
-                sleep(0.5)
             else:
                 objects["continue_game"].tap()
                 objects["x"].tap()
                 objects["x_new"].tap()
                 objects["x_news"].tap()
                 objects["x_swap"].tap()
+                objects["help"].tap()
                 objects["claim_daily"].tap()
                 objects["claim_temple"].tap()
                 objects["check_beast"].tap()
