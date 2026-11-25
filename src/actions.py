@@ -407,7 +407,6 @@ class Castle:
         while objects["hand"].tap(1):
             if objects["heroic_evoluation_blue"].tap(0.7):
                 objects["evolve"].tap(5)
-            objects["free"].tap() or objects['free_upgrade'].tap()
             if objects["kingroad_go"].tap():
                 logger.info("tapped kingroad go inside hand loop")
             sleep(1)
