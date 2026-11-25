@@ -220,7 +220,7 @@ class Castle:
     @classmethod
     def challenge(cls) -> None:
         logger.info("challenging")
-        for _ in range(3):
+        for _ in range(10):
             if objects["pause"].exists() or objects['blue_bonus'].exists():
                 cls.kill_monsters()
                 return
