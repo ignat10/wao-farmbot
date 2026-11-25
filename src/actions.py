@@ -331,6 +331,9 @@ class Castle:
             or objects["hand"].tap()
             or objects["kingroad_go"].exists()
         ):
+            reset_screen()
+            back()
+            sleep(0.5)
             self.close_ad()
             if not (objects["kingroad"].tap() or objects["hand"].tap()):
                 logger.info("No kingroad!")
