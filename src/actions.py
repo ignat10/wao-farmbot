@@ -607,8 +607,8 @@ class Castle:
                 return
             if objects['age'].tap():
                 sleep(1)
-                if objects['confirm_age'].tap(3):
-                    logger.info("confirmed age")
+                objects['confirm_age'].force_tap(10)
+                logger.info("confirmed age")
             objects['cancel'].tap()
             objects['x_ldplayer'].tap()
             objects['retry_network'].tap()
@@ -636,6 +636,9 @@ class Castle:
             if objects["exit_game"].exists():
                 logger.info("invalid token.")
                 break
+            elif objects['age'].tap():
+                sleep(1)
+                objects['confirm_age'].force_tap(10)
             else:
                 objects["continue_game"].tap()
                 objects["x"].tap()
