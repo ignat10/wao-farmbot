@@ -1234,14 +1234,18 @@ class Castle:
         cls.close_ad()
 
     @classmethod
-    def to_map(cls) -> None:
+    def to_map(cls) -> bool:
         """Goes to map from inside city"""
-        while not objects['book'].exists(1):
+        for _ in range(10):
+            if objects['book'].exists(1):
+                return True
             objects['map'].tap()
             if objects['loading'].exists(1):
                 objects['book'].exists(10)
             else:
                 cls.close_ad()
+        logger.warning("couldn't get to map.")
+        return False
 
     def free_marches(self) -> int:
         """get number of available marches of current castle"""
