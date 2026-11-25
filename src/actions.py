@@ -309,7 +309,10 @@ class Castle:
         objects["account"].force_tap(3)
         if not objects["undo_bind"].exists():
             objects["bind"].force_tap(3)
-            objects["gmail"].tap(20, index=gmail)
+            objects['gmail'].force_exists(20)
+            sleep(1)
+            reset_screen()
+            objects["gmail"].force_tap(index=gmail)
 
         if not objects["undo_bind"].exists(20):
             log_raise("Error in castle binding. check if there is place left for current realm")
