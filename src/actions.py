@@ -777,15 +777,15 @@ class Castle:
         autumn_login()
         cls.close_ad()
 
-    def tasks(self) -> bool:
-        if not objects['tasks'].tap(3):
-            back()
-            self.close_ad()
-            if self.level < 5:
-                return objects['tasks'].tap()
-            else:
-                objects['tasks'].force_tap(10)
-        return True
+    @classmethod
+    def tasks(cls) -> bool:
+        for _ in range(3):
+            if objects['tasks'].tap() and objects['build_task'].exists(3):
+                return True
+            reset_screen()
+            cls.close_ad()
+        logger.info("Unable to open tasks, probably castle level is too low.")
+        return False
 
     def pinata(self) -> None:
         if not self.tasks():
