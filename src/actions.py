@@ -1361,13 +1361,14 @@ class Castle:
         self.to_map()
         objects["book"].force_tap()
 
-        if objects["x_news"].tap(0.5):
-            sleep(0.8)
+        if not objects["elite_mines"].tap(3):
+            if objects["x_news"].tap():
+                back()
+                sleep(1)
+                return self.get_elite_mine()
+            log_raise('Not found "elite_mines" object')
 
-        objects["elite_mines"].force_tap(4)
-        sleep(1)
-
-        if (
+        if ( # TODO: add check if in the alliance, so if in elite_mines. join alliance if not
             not objects["blue"].exists(3)
             or (mines := objects["blue"].count()) == len(self.elite_mines_got)
         ):
