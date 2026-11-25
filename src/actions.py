@@ -1305,10 +1305,15 @@ class Castle:
 
     def _set_out(self) -> bool:
         try:
+            if self.free_marches() == 0:
+                logger.warning("Found no free marches in Castle._set_out")
+                return True
+
             if not objects['gather'].tap(4):
                 return False
 
             if not objects['set_out'].exists(3):
+                self.is_enough_troops = False # FIXME: it is incorrect for elite mines of locked yet resources.
                 logger.info("No set out.")
                 return False
 
