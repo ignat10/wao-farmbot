@@ -1103,8 +1103,8 @@ class Castle:
         """recruits horses."""
         if not self.tasks():
             return
-        logger.info(f"recruiting {"horses" if horses else "powerful troops"}.")
-        objects["recruit_task"].exists(1.5)
+        logger.info(f"recruiting {"t2 horses" if horses else "powerful troops"}.")
+        objects["recruit_task"].force_exists(10)
         barracks = objects["recruit_task"].count()
         back()
         sleep(2)
