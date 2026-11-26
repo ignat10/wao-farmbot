@@ -3,7 +3,7 @@ from src.castles import iter_castles, release, get_castle_name_by_avatar, get_ca
 from src.logger import logger, setup_logger
 from src.utils import parse_instance, start_game
 from src.device import launch_instance
-from src.status import check_avatar
+from src.screen import check_avatar
 
 
 def main():

@@ -23,11 +23,16 @@ from src.objects import (
     troops,
     equipment,
     resources_technology,
-    castle_levels,
-    march_limits,
+    Task,
 )
 from src.paths import CASTLES_DB_PATH
-from src.status import MineType, Task
+from src.screen import (
+    MineType,
+    tasks_matcher,
+    castle_levels_matcher,
+    march_limits_matcher,
+    castle_ui_matcher,
+)
 from src.logger import logger
 from src.utils import log_raise, start_game
 
@@ -137,15 +142,13 @@ class Castle:
             self.close_ad()
             return self.marches
         sleep(2)
-        for limit, obj in march_limits.items():
-            if obj.exists():
-                logger.info(f"saved {self.name} 1 + {limit} marches")
-                self.close_ad()
-                assert (
-                    0 <= limit <= 3
-                ), f"additional marches value must be in range 0..3, got {limit}"
-                return limit + 1
-        log_raise("No march num found in march_limit.")
+        limit = march_limits_matcher.exactly_one()
+        logger.info(f"saved {self.name} 1 + {limit} marches")
+        self.close_ad()
+        assert (
+            0 <= limit <= 3
+        ), f"additional marches value must be in range 0..3, got {limit}"
+        return limit + 1
 
     @staticmethod
     def close_bella() -> bool:
@@ -294,12 +297,10 @@ class Castle:
             return self.level
         reset_screen()
         sleep(1)
-        for level, obj in castle_levels.items():
-            if obj.exists():
-                logger.info(f"saved {self.name} level {level}")
-                self.close_ad()
-                return level
-        log_raise("No castle level found.")
+        level = castle_levels_matcher.exactly_one()
+        logger.info(f"saved {self.name} level {level}")
+        self.close_ad()
+        return level
 
     def bind_account(self):
         if self.account is not None:
@@ -341,7 +342,7 @@ class Castle:
         if not objects["kingroad_go"].exists(3):
             self.close_ad()
             return self.kingroad_task()
-        task = Task.check()
+        task = tasks_matcher.exactly_one()
         logger.info(f"doing {task.name if task is not None else "unknown"} task")
         match task:
             case Task.UPGRADE:
@@ -513,8 +514,8 @@ class Castle:
         elif (
             objects["bright_challenge"].exists()
             or objects["pause"].exists()
-            or objects["blue_bonus"].tap()
-            or objects["confirm_bonus"].tap()
+            or objects["blue_bonus"].exists()
+            or objects["confirm_bonus"].exists()
         ):
             self.challenge()
 
@@ -533,7 +534,6 @@ class Castle:
             cls.close_ad()
             cls.kingroad_claim()
         else:
-            reset_screen()
             while objects["kingroad_claim"].tap(0.7):
                 logger.info("claimed kingroad task!")
                 sleep(1.5)
@@ -571,7 +571,7 @@ class Castle:
             if not (objects["login"].tap(3) and objects["gmail"].exists(10)):
                 continue
             reset_screen()
-            sleep(1)
+            sleep(1.5)
             objects["gmail"].force_tap(index=self.google)
             for _ in range(15):
                 if objects["acc_list"].exists(1):
@@ -626,7 +626,7 @@ class Castle:
         """closes ad."""
         for _ in range(4):
             if objects['map'].exists(1):
-                return
+                break
             if cls.close_bella():
                 logger.info("closed bella. looking for hand.")
                 sleep(1)
@@ -650,20 +650,28 @@ class Castle:
                 objects["claim_temple"].tap()
                 objects["check_beast"].tap()
             if objects['map'].exists(1):
-                return
+                break
             for _ in range(3):
                 back()
-                sleep(0.2)
+                sleep(0.5)
             sleep(1)
             if objects['map'].exists(2):
-                return
+                break
             elif objects["no"].tap():
-                sleep(1.5)
+                objects['map'].exists(1)
             else:
                 tap_center()
-        logger.info("unable to close. restart app.")
-        restart_app()
-        cls.load()
+        else:
+            logger.info("unable to close. restart app.")
+            restart_app()
+            cls.load()
+        if missing := castle_ui_matcher.get_missing():
+            logger.warning(f"Ad was closed, but UI elements are missing: {missing}. Resetting screen and waiting...")
+            reset_screen()
+            sleep(3)
+
+            if still_missing := castle_ui_matcher.get_missing():
+                log_raise(f"UI elements still missing after screen reset: {still_missing}")
 
     @classmethod
     def claim_quest(cls):
@@ -918,9 +926,8 @@ class Castle:
             self.close_ad()
             self.research()
             return
-        if not objects["military"].exists(2):
-            objects["back"].force_tap(10)
-            objects["military"].force_exists(10)
+        if not (objects["military"].exists(2) or (objects["back"].tap(1) and objects["military"].exists(3))):
+            return
         if (
             marches == 1 and level >= 5
             or marches == 2 and level >=12
@@ -943,7 +950,7 @@ class Castle:
 
         else:
             logger.info("researching resources technology.")
-            objects["resources"].force_tap()
+            objects["resources"].force_tap(5)
             sleep(3)
             for techno in sample(resources_technology, k=len(resources_technology)):
                 if techno.tap():
@@ -1037,8 +1044,9 @@ class Castle:
 
         return self.speed_up()
 
-    def upgrade_castle(self) -> None:
+    def upgrade_castle(self) -> None: # FIXME: check function, looks like it taps free upgrade, when it doesn't exist
         """upgrades castle or required buildings."""
+        logger.info("Upgrading the castle")
         if not objects["castle_building"].tap():
             self.to_map()
             self.close_ad()
@@ -1288,7 +1296,7 @@ class Castle:
                 objects["arrow"].exists(2)
                 objects["arrow"].tap(times=2, interval=0.5)
 
-            elif objects['attack'].tap(1):
+            elif objects['attack'].tap():
                 objects["set_out"].tap(2)
                 if objects["use_stamina"].tap(1):
                     objects["confirm_use_stamina"].force_tap(3)
@@ -1313,8 +1321,8 @@ class Castle:
                 return False
 
             if not objects['set_out'].exists(3):
-                self.is_enough_troops = False # FIXME: it is incorrect for elite mines of locked yet resources.
-                logger.info("No set out.")
+                # self.is_enough_troops = False # FIXME: it is incorrect for elite mines of locked yet resources.
+                logger.info("No set out.") # I guess this can only happen if mine is elite
                 return False
 
             if objects['troops_slider'].count() == 6:
@@ -1347,6 +1355,7 @@ class Castle:
             sleep(2)
 
             if objects["gather"].tap(2):
+                sleep(1)
                 if self._set_out():
                     self.mine_type = chain([(level, need_type)], self.mine_type)
                     return

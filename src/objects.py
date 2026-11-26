@@ -1,4 +1,5 @@
 from typing import Literal, cast
+from enum import Enum
 
 from screen_objects import ScreenObject, get_objects
 
@@ -312,6 +313,17 @@ castle_levels = {
     if name.startswith(f"castle_level_")
 }
 
+class Task(Enum):
+    UPGRADE = objects["start_upgrading"]
+    POWER = objects["battle_power"]
+    RECRUIT = objects["recruit_"]
+    SCOUT = objects["scout"]
+    CONQUER = objects["conquer"]
+    GATHER = objects["gather_task"]
+    RUINS = objects["ruins_wave_3"]
+
+kingroad_tasks = {e: e.value for e in Task}
+
 resources_need: dict[str, ScreenObject] = {
     name.removeprefix("need_"): obj
     for name, obj in objects.items()
@@ -335,4 +347,21 @@ avatars: dict[int, ScreenObject] = {
     int(name[7:]): obj
     for name, obj in objects.items()
     if name.startswith("avatar_")
+}
+
+castle_ui_elements: dict[ScreenObjectName, ScreenObject] = {
+    name: objects[name]
+    for name in cast(
+        set[ScreenObjectName],
+        {
+            "events",
+            "lord",
+            "lord_info",
+            "avatar",
+            "pack",
+            "alliance",
+            "mail",
+            "quest",
+        },
+    )
 }
