@@ -3,6 +3,7 @@ from time import perf_counter
 from typing import Any, Iterator, TYPE_CHECKING
 
 from src.paths import CASTLES_DB_PATH
+from src.logger import logger
 
 
 if TYPE_CHECKING:
@@ -106,9 +107,9 @@ def iter_castles() -> Iterator[Castle]:
         seconds = int(perf_counter() - started_at)
         minutes, seconds = divmod(seconds, 60)
         elapsed = f"{minutes}m {seconds}s"
-        print(f"Castle {name} took {elapsed}")
+        logger.info(f"Castle {name} took {elapsed}")
 
-    print("No available castles.")
+    logger.info("No available castles.")
 
 
 def get_available() -> str | None:

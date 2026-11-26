@@ -1,5 +1,6 @@
 from src.actions import Castle
 from src.castles import iter_castles, release, get_castle_name_by_avatar, get_castle
+from src.logger import logger, setup_logger
 from src.utils import parse_instance, start_game
 from src.device import launch_instance
 from src.status import check_avatar
@@ -8,7 +9,7 @@ from src.status import check_avatar
 def main():
     instance = parse_instance()
     launch_instance(instance)
-    from src.logger import logger # Import after launch_instance, that logger will have instance name
+    setup_logger(instance)
     start_game()
     castles = iter_castles()
     castle = None
